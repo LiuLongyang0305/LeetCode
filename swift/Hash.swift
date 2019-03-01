@@ -243,7 +243,69 @@ class Solution {
     }
     
     func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        var result = [Int]()
+        var numsCount = Dictionary<Int,Int>()
+        let targetNums = nums1.count < nums2.count ? nums1 : nums2
+        let patternNums = nums1.count < nums2.count ? nums2 : nums1
+        for num in targetNums {
+            if nil != numsCount[num] {
+                numsCount[num] = numsCount[num]! + 1
+            } else {
+                numsCount[num] = 1
+            }
+        }
         
+        for num in patternNums  {
+            if let count = numsCount[num] {
+                if count > 0 {
+                    result.append(num)
+                }
+                if count == 1 {
+                    numsCount.removeValue(forKey: num)
+                } else {
+                    numsCount[num] = count - 1
+                }
+            }
+        }
+        return result
+    }
+
+    func hIndex(_ citations: [Int]) -> Int {
+        let myCitations = citations
+        myCitations.sorted(by: >)
+        for (index,val) in myCitations.enumerated() {
+            if index + 1 > val {
+                return index
+            }
+        }
+        return citations.count
+    }
+    func firstUniqChar(_ s: String) -> Int {
+        var set = Set<Character>()
+        var doubled = Set<Character>()
+        for ch in s {
+            if set.contains(ch) {
+                set.remove(ch)
+                doubled.insert(ch)
+            } else {
+                if !doubled.contains(ch) {
+                    set.insert(ch)
+                }
+            }
+        }
+        //        for (index,ch) in s.enumerated() {
+        //            if set.contains(ch) {
+        //                return index
+        //            }
+        //        }
+        var index = 0
+        for ch in s {
+            if set.contains(ch){
+                return index
+            }
+            index += 1
+        }
+        return -1
     }
 }
 
