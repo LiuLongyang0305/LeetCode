@@ -234,5 +234,16 @@ class Solution {
         }
         return result.count > 0
     }
+    
+    func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        let set1 : Set<Int> = Set<Int>(nums1)
+        let set2 = Set<Int>(nums2)
+        let intersection = set1.intersection(set2)
+        return Array<Int>(intersection)
+    }
+    
+    func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        
+    }
 }
 
