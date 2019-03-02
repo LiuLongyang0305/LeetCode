@@ -307,5 +307,106 @@ class Solution {
         }
         return -1
     }
+func findTheDifference(_ s: String, _ t: String) -> Character {
+        typealias CharCount = (inSource:Int,inTarget:Int)
+        var dic = Dictionary<Character,CharCount>()
+        for ch in s {
+            if nil != dic[ch]{
+                dic[ch]!.inSource = (dic[ch]?.inSource)! + 1
+            } else {
+                dic[ch] = CharCount(1,0)
+            }
+        }
+        for ch in t {
+            if nil != dic[ch] {
+                dic[ch]!.inTarget = (dic[ch]?.inTarget)! + 1
+            } else {
+                return ch
+            }
+        }
+        
+        //        let result = dic.filter { (arg0) -> Bool in
+        //            let (_, value) = arg0
+        //            return value.inTarget - value.inSource == 1
+        //        }
+        //        return (result.first?.key)!
+        for (key,value) in dic {
+            if value.inTarget - value.inSource == 1 {
+                return key
+            }
+        }
+        return " "
+    }
+    
+    func longestPalindrome(_ s: String) -> Int {
+        var set = Set<Character>()
+        var count = 0
+        for ch in s {
+            if set.contains(ch) {
+                set.remove(ch)
+                count += 1
+            } else {
+                set.insert(ch)
+            }
+        }
+        return set.isEmpty ? count : (count + 1)
+    }
+    
+    func findAnagrams(_ s: String, _ p: String) -> [Int] {
+        var result = [Int]()
+        if s.isEmpty || s.count < p.count{
+            return result
+        }
+        
+        var patternSet = Set<Character>(p)
+        let sourceSet = Set<Character>(s)
+        let sourceLength = s.count
+        let patternLength = p.count
+        if patternSet.count == 1 && sourceSet == patternSet {
+            for i in 0...(sourceLength - patternLength){
+                result.append(i)
+            }
+            return result
+        }
+        
+        typealias CharCount = (inSource: Int,inPattern:Int)
+        var charCount = Dictionary<Character,CharCount>()
+        
+        for ch in p {
+            if patternSet.contains(ch){
+                charCount[ch]!.inPattern = (charCount[ch]?.inPattern)! + 1
+            } else {
+                patternSet.insert(ch)
+                charCount[ch] = (0,1)
+            }
+        }
+        
+        var sourceCharArray = Array<Character>(s)
+        for i in 0..<(sourceLength - patternLength){
+            if patternSet.contains(sourceCharArray[i]){
+                for ch in patternSet {
+                    charCount[ch]!.inSource = 0
+                }
+                for j in 0..<patternLength {
+                    let ch = sourceCharArray[i + j]
+                    if !patternSet.contains(ch) {
+                        break
+                    }
+                    charCount[ch]!.inSource = (charCount[ch]?.inSource)! + 1
+                    if patternLength - 1 == j {
+                        let temp = charCount.filter { (arg0) -> Bool in
+                            let (_, value) = arg0
+                            return value.inPattern != value.inSource
+                        }
+                        if temp.count == 0 {
+                            result.append(i)
+                        }
+                    }
+                }
+            }
+            
+        }
+        return result
+    }
 }
 
