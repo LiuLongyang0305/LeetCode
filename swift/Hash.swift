@@ -351,17 +351,18 @@ func findTheDifference(_ s: String, _ t: String) -> Character {
         }
         return set.isEmpty ? count : (count + 1)
     }
-    
-    func findAnagrams(_ s: String, _ p: String) -> [Int] {
+    //Time Limit Exceed
+func findAnagrams(_ s: String, _ p: String) -> [Int] {
         var result = [Int]()
         if s.isEmpty || s.count < p.count{
             return result
         }
         
-        var patternSet = Set<Character>(p)
+        let patternSet = Set<Character>(p)
         let sourceSet = Set<Character>(s)
         let sourceLength = s.count
         let patternLength = p.count
+        
         if patternSet.count == 1 && sourceSet == patternSet {
             for i in 0...(sourceLength - patternLength){
                 result.append(i)
@@ -371,18 +372,18 @@ func findTheDifference(_ s: String, _ t: String) -> Character {
         
         typealias CharCount = (inSource: Int,inPattern:Int)
         var charCount = Dictionary<Character,CharCount>()
-        
+
         for ch in p {
-            if patternSet.contains(ch){
-                charCount[ch]!.inPattern = (charCount[ch]?.inPattern)! + 1
+            if nil != charCount[ch] {
+                let oriCount = (charCount[ch]?.inPattern)!
+                charCount[ch]?.inPattern = oriCount + 1
             } else {
-                patternSet.insert(ch)
                 charCount[ch] = (0,1)
             }
         }
-        
+
         var sourceCharArray = Array<Character>(s)
-        for i in 0..<(sourceLength - patternLength){
+        for i in 0...(sourceLength - patternLength){
             if patternSet.contains(sourceCharArray[i]){
                 for ch in patternSet {
                     charCount[ch]!.inSource = 0
@@ -392,7 +393,8 @@ func findTheDifference(_ s: String, _ t: String) -> Character {
                     if !patternSet.contains(ch) {
                         break
                     }
-                    charCount[ch]!.inSource = (charCount[ch]?.inSource)! + 1
+                    let ori = (charCount[ch]?.inSource)!
+                    charCount[ch]?.inSource = ori + 1
                     if patternLength - 1 == j {
                         let temp = charCount.filter { (arg0) -> Bool in
                             let (_, value) = arg0
@@ -404,7 +406,6 @@ func findTheDifference(_ s: String, _ t: String) -> Character {
                     }
                 }
             }
-            
         }
         return result
     }
