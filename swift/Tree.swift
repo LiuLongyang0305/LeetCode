@@ -476,8 +476,6 @@ class Solution {
                         }
                         temp?.right = root
                     }
-                    
-                    
                     root?.left = nil
                     leftResult?.left = nil
                     rightResult?.left = nil
@@ -646,8 +644,571 @@ class Solution {
         }
         return root
     }
+
+ func flatten(_ root: TreeNode?) {
+        if nil == root || (nil == root?.left && nil == root?.right){
+            return
+        }
+        let left = root?.left
+        let right = root?.right
+        if nil == left || nil == right {
+            if nil == left {
+                flatten(right)
+            } else {
+                flatten(left)
+                root?.right = left
+                root?.left = nil
+            }
+        } else {
+            flatten(left)
+            flatten(right)
+            root?.right = left
+            root?.left = nil
+            var temp : TreeNode? = left
+            while nil != temp?.right {
+                temp = temp?.right
+            }
+            temp?.right = right
+            temp?.left = nil
+        }
+    }
+    
+    func rightSideView(_ root: TreeNode?) -> [Int] {
+        var result = Array<Int>()
+        if nil != root {
+            var nodes = Array<TreeNode?>()
+            nodes.append(root)
+            while !nodes.isEmpty {
+                result.append(nodes.last!!.val)
+                let length = nodes.count
+                for _ in 0..<length {
+                    let temp : TreeNode = nodes.remove(at: 0)!
+                    if nil != temp.left{
+                        nodes.append(temp.left)
+                    }
+                    if nil != temp.right {
+                        nodes.append(temp.right)
+                    }
+                }
+            }
+        }
+        return result
+    }
+    
+    func countNodes(_ root: TreeNode?) -> Int {
+        func getTreeHeight(_ root : TreeNode?,_ isLeftTree : Bool) -> Int {
+            if nil == root {
+                return 0
+            }
+            var temp : TreeNode? = root
+            var count : Int = 0
+            while nil != temp {
+                count += 1
+                temp = isLeftTree ? temp?.left : temp?.right
+            }
+            return count
+        }
+        return 0
+    }
+    
+    func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+        var nodeValues = [Int]()
+        var nodeStack = Array<TreeNode?>()
+        var temp = root
+        while nil != temp || !nodeStack.isEmpty && nodeValues.count < k{
+            if nil != temp {
+                nodeStack.append(temp)
+                temp = temp?.left
+            } else {
+                temp = nodeStack.popLast()!!
+                nodeValues.append((temp?.val)!)
+                temp = temp?.right
+            }
+        }
+        return nodeValues.last!
+    }
+    
+    func deleteNode(_ root: TreeNode?, _ key: Int) -> TreeNode? {
+        func increasingBST2(_ root: TreeNode?) -> TreeNode? {
+            if nil == root {
+                return nil
+            } else {
+                let left = root?.left
+                let right = root?.right
+                
+                if nil == left && nil == right {
+                    return root
+                } else {
+                    let leftResult = increasingBST(left)
+                    let rightResult = increasingBST(right)
+                    if nil == left {
+                        root?.right = rightResult
+                        rightResult?.left = nil
+                        root?.left = nil
+                        return root
+                    } else {
+                        root?.right = rightResult
+                        if nil == left?.right {
+                            left?.right = root
+                        } else {
+                            var temp : TreeNode? = left
+                            while nil != temp?.right {
+                                temp = temp?.right
+                            }
+                            temp?.right = root
+                        }
+                        root?.left = nil
+                        leftResult?.left = nil
+                        rightResult?.left = nil
+                        return leftResult
+                    }
+                }
+            }
+        }
+        
+        if nil == root {
+            return nil
+        }
+        if (root?.val)! == key {
+            let left = root?.left
+            let right = root?.right
+            if nil == left && nil == right {
+                return nil
+            } else {
+                if nil == left {
+                    return right
+                } else if nil == right {
+                    return left
+                } else {
+                    let node = increasingBST2(right)
+                    node?.left = left
+                    return node
+                }
+            }
+        } else {
+            if key < (root?.val)!{
+                root?.left = deleteNode(root?.left, key)
+            } else {
+                root?.right = deleteNode(root?.right, key)
+            }
+            return root
+        }
+    }
+    
+    func diameterOfBinaryTree(_ root: TreeNode?) -> Int {
+        if nil == root {
+            return 0
+        }
+        var maxLength = 0;
+        func getDepth(_ root : TreeNode?) -> Int{
+            if root == nil {
+                return 0
+            } else {
+                let left = getDepth(root?.left)
+                let right = getDepth(root?.right)
+                let len = 1 + left + right
+                if len > maxLength {
+                    maxLength = len
+                }
+                return 1 + max(left, right)
+            }
+        }
+        getDepth(root)
+        return maxLength - 1
+    }
+    
+    func addOneRow(_ root: TreeNode?, _ v: Int, _ d: Int) -> TreeNode? {
+        var queue = Array<TreeNode?>()
+        guard nil != root else {
+            return root
+        }
+        //add row in front of the root
+        guard 1 != d else {
+            let node : TreeNode? = TreeNode(v)
+            node?.left = root
+            return node
+        }
+        queue.append(root)
+        var index = 1
+        while !queue.isEmpty && index < d - 1 {
+            let length = queue.count
+            for _ in 0..<length {
+                let temp = queue.removeFirst()
+                
+                if nil != temp?.left{
+                    queue.append(temp?.left)
+                }
+                if nil != temp?.right {
+                    queue.append(temp?.right)
+                }
+            }
+            index += 1
+        }
+        for node in queue{
+            //            var node = queue.removeFirst()
+            let left = node?.left
+            let right = node?.right
+            node?.left = TreeNode(v)
+            node?.left?.left = left
+            node?.right = TreeNode(v)
+            node?.right?.right = right
+        }
+        return root
+    }
+    
+    
+    func constructMaximumBinaryTree(_ nums: [Int]) -> TreeNode? {
+        guard 0 != nums.count   else {
+            return nil
+        }
+        guard 1 != nums.count else {
+            return TreeNode(nums[0])
+        }
+        var root : TreeNode? = nil
+        let maxValue : Int = nums.max()!
+        root = TreeNode(maxValue)
+        let subTreeNums = nums.split(separator: maxValue)
+        guard 1 != subTreeNums.count else {
+            let subNums = Array<Int>(subTreeNums[0])
+            if nums[0] == maxValue {
+                root?.right = constructMaximumBinaryTree(subNums)
+            } else {
+                root?.left = constructMaximumBinaryTree(subNums)
+            }
+            return root
+        }
+        root?.left = constructMaximumBinaryTree(Array<Int>(subTreeNums[0]))
+        root?.right = constructMaximumBinaryTree(Array<Int>(subTreeNums[1]))
+        return root
+    }
+    func widthOfBinaryTree(_ root: TreeNode?) -> Int {
+        class AnnotatedNode {
+            var node : TreeNode?
+            var depth : Int
+            var pos : Int
+            init(_ node : TreeNode?, _ depth : Int,_ pos: Int) {
+                self.node = node
+                self.depth = depth
+                self.pos = pos
+            }
+        }
+        if nil == root {
+            return 0
+        }
+        var ans : Int = 0
+        var nodesQueue = Array<AnnotatedNode>()
+        nodesQueue.append(AnnotatedNode(root,0,0))
+        var curDepth : Int  = 0
+        var left : Int  = 0
+        while !nodesQueue.isEmpty {
+            let annotatedNode = nodesQueue.removeFirst()
+            if nil != annotatedNode.node{
+                nodesQueue.append(AnnotatedNode(annotatedNode.node?.left,annotatedNode.depth + 1,annotatedNode.pos * 2 + 1))
+                nodesQueue.append(AnnotatedNode(annotatedNode.node?.right,annotatedNode.depth + 1,annotatedNode.pos * 2 + 1))
+                if curDepth != annotatedNode.depth {
+                    curDepth = annotatedNode.depth
+                    left = annotatedNode.pos
+                }
+                ans = max(ans, annotatedNode.pos - left + 1)
+            }
+        }
+        return ans
+    }
+    
+    func insertIntoBST(_ root: TreeNode?, _ val: Int) -> TreeNode? {
+        if nil == root {
+            return TreeNode(val)
+        }
+        var temp : TreeNode? = root
+        while nil != temp {
+            let isLeft = (temp?.val)! > val
+            if isLeft {
+                if nil == temp?.left {
+                    temp?.left = TreeNode(val)
+                    temp = nil
+                } else {
+                    temp = temp?.left
+                }
+            } else {
+                if nil == temp?.right {
+                    temp?.right = TreeNode(val)
+                    temp = nil
+                } else {
+                    temp = temp?.right
+                }
+            }
+        }
+        return root
+    }
+    
+    func pruneTree(_ root: TreeNode?) -> TreeNode? {
+        func getSubTreeSum(_ root : TreeNode?) -> Int {
+            if nil == root?.left && nil == root?.right {
+                return (root?.val)!
+            }
+            let left : TreeNode? = root?.left
+            let right : TreeNode? = root?.right
+            var leftSubTreeSum = 0
+            var rightSubTreeSum = 0
+            if nil != left{
+                leftSubTreeSum = getSubTreeSum(left)
+                if 0 == leftSubTreeSum {
+                    root?.left = nil
+                }
+            }
+            if nil != right{
+                rightSubTreeSum = getSubTreeSum(right)
+                if 0 == rightSubTreeSum {
+                    root?.right = nil
+                }
+            }
+            return (root?.val)! + leftSubTreeSum + rightSubTreeSum
+        }
+        if nil == root {
+            return nil
+        }
+        if nil == root?.left && nil == root?.right && 0 == (root?.val)!{
+            return nil
+        }
+        getSubTreeSum(root)
+        return root
+    }
+    func pruneTree2(_ root: TreeNode?) -> TreeNode? {
+        func containsNodesOne(_ root : TreeNode?) -> Bool {
+            if nil == root {
+                return false
+            }
+            let left = containsNodesOne(root?.left)
+            let right = containsNodesOne(root?.right)
+            if !left {
+                root?.left = nil
+            }
+            if !right {
+                root?.right = nil
+            }
+            return 1 == (root?.val)! || left || right
+        }
+        return containsNodesOne(root) ? root : nil
+    }
+    
+    func flipEquiv(_ root1: TreeNode?, _ root2: TreeNode?) -> Bool {
+        if nil == root1 && nil == root2 {
+            return true
+        }
+        if nil == root1 || nil == root2 || root2?.val != root1?.val {
+            return false
+        }
+        
+        return (flipEquiv(root1?.left,root2?.left) && flipEquiv(root1?.right,root2?.right)) || (flipEquiv(root1?.left,root2?.right) && flipEquiv(root1?.right,root2?.left))
+    }
+    
+    func isCompleteTree(_ root: TreeNode?) -> Bool {
+        if nil == root {
+            return true
+        }
+        class AnnonatedNode{
+            var node : TreeNode?
+            var position : Int
+            init(_ node : TreeNode?,_ position : Int) {
+                self.node = node
+                self.position = position
+            }
+        }
+        var nodes = Array<AnnonatedNode?>()
+        nodes.append(AnnonatedNode(root,1))
+        var i : Int = 0
+        while i < nodes.count {
+            let node = nodes[i]
+            i = i + 1
+            if nil != node?.node {
+                nodes.append(AnnonatedNode(node?.node?.left,2 * (node?.position)!))
+                nodes.append(AnnonatedNode(node?.node?.right,2 * (node?.position)! + 1))
+            }
+        }
+        return nodes[i - 1]?.position == nodes.count
+    }
+    
+    func isCompleteTree2(_ root: TreeNode?) -> Bool {
+        if nil == root {
+            return true
+        }
+        var nodes = Array<TreeNode?>()
+        nodes.append(root)
+        var result = true
+        var existNilNode = false
+        while !nodes.isEmpty && result {
+            let length = nodes.count
+            for _ in 0..<length{
+                let node = nodes.removeFirst()
+                if nil != node {
+                    nodes.append(node?.left)
+                    nodes.append(node?.right)
+                } else {
+                    existNilNode = true
+                }
+            }
+            let firstNilIndex = nodes.firstIndex {nil == $0}
+            let lastNodeindex = nodes.lastIndex { nil != $0}
+            result = existNilNode ? (nil == lastNodeindex)  : (nil == firstNilIndex || nil == lastNodeindex || firstNilIndex! > lastNodeindex!)
+        }
+        return result
+    }
+    func flipMatchVoyage(_ root: TreeNode?, _ voyage: [Int]) -> [Int] {
+        var result = [Int]()
+        var index : Int = 0
+        var currentVoyage = voyage
+        var isMatched = true
+        
+        func dfs(_ root : TreeNode?){
+            if isMatched{
+                guard nil != root else {
+                    return
+                }
+                if (root?.val) != currentVoyage[index]{
+                    result.removeAll()
+                    result.append(-1)
+                    isMatched = false
+                }
+                index += 1
+                if index < currentVoyage.count && nil != root?.left && (root?.left?.val)! != currentVoyage[index]{
+                    result.append((root?.val)!)
+                    dfs(root?.right)
+                    dfs(root?.left)
+                } else {
+                    dfs(root?.left)
+                    dfs(root?.right)
+                }
+            }
+        }
+        dfs(root)
+        if !result.isEmpty && -1 == result[0] {
+            result.removeAll()
+            result.append(-1)
+        }
+        return result
+    }
+    /******** Q987  ***************/
+    //BFS based solution,
+    func verticalTraversal(_ root: TreeNode?) -> [[Int]] {
+        var result = [[Int]]()
+        if nil == root {
+            return result
+        }
+        var minX : Int = 0
+        var maxX : Int = 0
+        class AnnotatedNode {
+            var node : TreeNode?
+            var posX : Int
+            init(_ node : TreeNode?,_ posX : Int) {
+                self.node = node
+                self.posX = posX
+            }
+        }
+        var annotatedNodes = Array<AnnotatedNode>()
+        annotatedNodes.append(AnnotatedNode(root,0))
+        result.append([Int]())
+        while !annotatedNodes.isEmpty {
+            let length = annotatedNodes.count
+            for _ in 0..<length {
+                let annotatedNode = annotatedNodes.removeFirst()
+                result[annotatedNode.posX - minX].append((annotatedNode.node?.val)!)
+                if nil != annotatedNode.node?.left {
+                    let posX = annotatedNode.posX - 1
+                    if posX < minX {
+                        minX = posX
+                        result.insert([Int](), at: 0)
+                    }
+                    annotatedNodes.append(AnnotatedNode(annotatedNode.node?.left,posX))
+                }
+                if nil != annotatedNode.node?.right {
+                    let posX = annotatedNode.posX + 1
+                    if posX > maxX {
+                        maxX = posX
+                        result.append([Int]())
+                    }
+                    annotatedNodes.append(AnnotatedNode(annotatedNode.node?.right,posX))
+                }
+            }
+        }
+        return result
+    }
+
 }
 
+class BSTIterator {
+    var stack : Array<TreeNode?> = []
+    init(_ root: TreeNode?) {
+        addElements(root)
+    }
+    
+    /** @return the next smallest number */
+    func next() -> Int {
+        let node = stack.popLast()!
+        addElements(node?.right)
+        return (node?.val)!
+    }
+    
+    /** @return whether we have a next smallest number */
+    func hasNext() -> Bool {
+        return !stack.isEmpty
+    }
+    func addElements(_ root : TreeNode?)  {
+        if nil != root {
+            var temp : TreeNode? = root
+            while nil != temp {
+                stack.append(temp)
+                temp = temp?.left
+            }
+        }
+    }
+}
 
-
+class CBTInserter {
+    var root : TreeNode?
+    var unCompleteNodes = Array<TreeNode?>()
+    init(_ root: TreeNode?) {
+        self.root = root
+        travelVerse(root)
+    }
+    
+    func insert(_ v: Int) -> Int {
+        let parent : TreeNode? = unCompleteNodes.first!
+        let node = TreeNode(v)
+        if nil == parent?.left {
+            parent?.left = node
+        } else {
+            parent?.right = node
+            unCompleteNodes.removeFirst()
+        }
+        unCompleteNodes.append(node)
+        return (parent?.val)!
+    }
+    
+    func get_root() -> TreeNode? {
+        return root
+    }
+    
+    func travelVerse(_ root: TreeNode?)  {
+        if nil == root {
+            return
+        }
+        var nodesQueue = Array<TreeNode?>()
+        nodesQueue.append(root)
+        while !nodesQueue.isEmpty {
+            let length = nodesQueue.count
+            for _ in 0..<length {
+                let temp = nodesQueue.removeFirst()
+                if nil == temp?.left || nil == temp?.right{
+                    unCompleteNodes.append(temp)
+                }
+                if nil != temp?.left{
+                    nodesQueue.append(temp?.left)
+                }
+                if nil != temp?.right{
+                    nodesQueue.append(temp?.right)
+                }
+            }
+        }
+    }
+}
 
