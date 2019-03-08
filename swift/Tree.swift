@@ -1087,52 +1087,41 @@ class Solution {
         }
         return result
     }
-    /******** Q987  ***************/
-    //BFS based solution,
-    func verticalTraversal(_ root: TreeNode?) -> [[Int]] {
-        var result = [[Int]]()
-        if nil == root {
-            return result
-        }
-        var minX : Int = 0
-        var maxX : Int = 0
-        class AnnotatedNode {
-            var node : TreeNode?
-            var posX : Int
-            init(_ node : TreeNode?,_ posX : Int) {
-                self.node = node
-                self.posX = posX
+    func smallestFromLeaf(_ root: TreeNode?) -> String {
+        let chars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+        func travelersal(_ root : TreeNode?) -> String {
+            if nil == root {
+                return ""
+            }
+            let left = root?.left
+            let right = root?.right
+            let rootStr = chars[(root?.val)!]
+            if nil == left && nil == right {
+                return rootStr
+            } else  {
+                var leftResult = ""
+                var rightResult = ""
+                if nil == left || nil == right{
+                    let target = nil == left ? right : left
+                    leftResult  = travelersal(target?.left)
+                    rightResult = travelersal(target?.right)
+                    if leftResult == "" || rightResult == "" {
+                        return (leftResult == "" ? rightResult : leftResult ) + chars[(target?.val)!] + rootStr
+                    } else {
+                        leftResult += chars[(target?.val)!] + rootStr
+                        rightResult += chars[(target?.val)!] + rootStr
+                        return leftResult < rightResult ? leftResult : rightResult
+                    }
+                    
+                } else {
+                    leftResult = travelersal(left) + rootStr
+                    rightResult = travelersal(right) + rootStr
+                }
+                return leftResult < rightResult ? leftResult : rightResult
             }
         }
-        var annotatedNodes = Array<AnnotatedNode>()
-        annotatedNodes.append(AnnotatedNode(root,0))
-        result.append([Int]())
-        while !annotatedNodes.isEmpty {
-            let length = annotatedNodes.count
-            for _ in 0..<length {
-                let annotatedNode = annotatedNodes.removeFirst()
-                result[annotatedNode.posX - minX].append((annotatedNode.node?.val)!)
-                if nil != annotatedNode.node?.left {
-                    let posX = annotatedNode.posX - 1
-                    if posX < minX {
-                        minX = posX
-                        result.insert([Int](), at: 0)
-                    }
-                    annotatedNodes.append(AnnotatedNode(annotatedNode.node?.left,posX))
-                }
-                if nil != annotatedNode.node?.right {
-                    let posX = annotatedNode.posX + 1
-                    if posX > maxX {
-                        maxX = posX
-                        result.append([Int]())
-                    }
-                    annotatedNodes.append(AnnotatedNode(annotatedNode.node?.right,posX))
-                }
-            }
-        }
-        return result
+        return travelersal(root)
     }
-
 }
 
 class BSTIterator {
