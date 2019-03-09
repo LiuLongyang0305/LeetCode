@@ -1122,6 +1122,123 @@ class Solution {
         }
         return travelersal(root)
     }
+func smallestFromLeaf(_ root: TreeNode?) -> String {
+        let chars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+        func travelersal(_ root : TreeNode?) -> String {
+            if nil == root {
+                return ""
+            }
+            let left = root?.left
+            let right = root?.right
+            let rootStr = chars[(root?.val)!]
+            if nil == left && nil == right {
+                return rootStr
+            } else  {
+                var leftResult = ""
+                var rightResult = ""
+                if nil == left || nil == right{
+                    let target = nil == left ? right : left
+                    leftResult  = travelersal(target?.left)
+                    rightResult = travelersal(target?.right)
+                    if leftResult == "" || rightResult == "" {
+                        return (leftResult == "" ? rightResult : leftResult ) + chars[(target?.val)!] + rootStr
+                    } else {
+                        leftResult += chars[(target?.val)!] + rootStr
+                        rightResult += chars[(target?.val)!] + rootStr
+                        return leftResult < rightResult ? leftResult : rightResult
+                    }
+                    
+                } else {
+                    leftResult = travelersal(left) + rootStr
+                    rightResult = travelersal(right) + rootStr
+                }
+                return leftResult < rightResult ? leftResult : rightResult
+            }
+        }
+        return travelersal(root)
+    }
+    
+    func sortedListToBST(_ head: ListNode?) -> TreeNode? {
+        if nil == head {
+            return nil
+        }
+        if nil == head?.next {
+            return TreeNode((head?.val)!)
+        }
+        var fast : ListNode? = head
+        var slow : ListNode? = head
+        var pre : ListNode? = nil
+        while nil != fast && nil != fast?.next{
+            pre = nil == pre ? head : slow
+            slow = slow?.next
+            fast = fast?.next?.next
+        }
+        let root : TreeNode? = TreeNode((slow?.val)!)
+        pre?.next = nil
+        root?.left = sortedListToBST(head)
+        root?.right = sortedListToBST(slow?.next)
+        return root
+    }
+    
+    func findMode(_ root: TreeNode?) -> [Int] {
+        var dic = Dictionary<Int,Int>()
+        func inorder(_ root : TreeNode?){
+            if nil == root {
+                return
+            }
+            inorder(root?.left)
+            if nil == dic[(root?.val)!] {
+                dic[(root?.val)!] = 1
+            } else {
+                dic[(root?.val)!] = dic[(root?.val)!]! + 1
+            }
+            inorder(root?.right)
+        }
+        var result = [Int]()
+        if nil == root {
+            return result
+        }
+        if nil == root?.left && nil == root?.right {
+            result.append((root?.val)!)
+            return result
+        }
+        inorder(root)
+        var max : Int = 0
+        for (key,value) in dic {
+            if value > max {
+                max = value
+                result.removeAll()
+                result.append(key)
+            } else if value == max {
+                result.append(key)
+            }
+        }
+        let temp = dic.filter { $0.value == max}
+        result.append(contentsOf: temp.keys)
+        return result
+    }
+    
+    func isValidBST(_ root: TreeNode?) -> Bool {
+        if nil == root{
+            return true
+        }
+        func isBSTHelper(_ root : TreeNode?,_ lowerLimit:Int?,_ upperLimit : Int?) -> Bool {
+            if nil != lowerLimit && (root?.val)! <= lowerLimit!{
+                return false
+            }
+            if nil != upperLimit && (root?.val)! >= upperLimit! {
+                return false
+            }
+            let left = nil != root?.left ? isBSTHelper(root?.left, lowerLimit, root?.val) : true
+            if left {
+                let right = nil != root?.right ? isBSTHelper(root?.right, root?.val, upperLimit) : true
+                return right
+            } else {
+                return false
+            }
+        }
+        return isBSTHelper(root, nil, nil)
+    }
 }
 
 class BSTIterator {
