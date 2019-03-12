@@ -1367,6 +1367,45 @@ func convertBSTIteration(_ root : TreeNode?)-> TreeNode? {
     return root
 }
 
-
+    func pathSumRecursionQ113(_ root: TreeNode?, _ sum: Int) -> [[Int]] {
+        guard let root = root else{
+            return []
+        }
+        let remaining = sum - root.val
+        if nil == root.left && nil == root.right {
+            return remaining == 0 ? [[root.val]] : []
+        } else {
+            let children = pathSumRecursionQ113(root.left, remaining) + pathSumRecursionQ113(root.right, remaining)
+            return children.map{[root.val] + $0}
+        }
+    }
+    
+    func pathSumIterationQ113(_ root: TreeNode?, _ sum: Int) -> [[Int]] {
+        var result = [[Int]]()
+        var currentpath = [Int]()
+        func dfs(_ root: TreeNode?,_ sum:  Int ) {
+            if nil == root{
+                return
+            }
+            let remaining = sum - (root?.val)!
+            currentpath.append((root?.val)!)
+            if nil == root?.left && nil == root?.right{
+                if 0 == remaining {
+                    result.append(currentpath)
+                }
+            }
+            
+            if nil != root?.left{
+                dfs(root?.left, remaining)
+            }
+            
+            if nil != root?.right {
+                dfs(root?.right, remaining)
+            }
+            currentpath.removeLast()
+        }
+        dfs(root,sum)
+        return result
+    }
 
 
