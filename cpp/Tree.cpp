@@ -31,7 +31,20 @@ class Node
         next = _next;
     }
 };
-
+class AnnotatedNode
+{
+  public:
+    Node *node;
+    bool isRight;
+    int level;
+    AnnotatedNode() {}
+    AnnotatedNode(Node *_node, bool _isRight, int _level)
+    {
+        node = _node;
+        isRight = _isRight;
+        level = _level;
+    }
+};
 class Solution
 {
   public:
@@ -105,36 +118,42 @@ class Solution
         {
             return root;
         }
-        list<pair<Node *, bool>> nodes;
-        nodes.push_back(pair<Node *, bool>(root, false));
+        list<AnnotatedNode> nodes;
+        int level = 0;
+        nodes.push_back(AnnotatedNode(root, false, level));
         while (!nodes.empty())
         {
+            level++;
             int length = nodes.size();
-            list<pair<Node *, bool>>::iterator end = nodes.end();
-
-            for (list<pair<Node *, bool>>::iterator it = nodes.begin(); it != end; it++)
+            list<AnnotatedNode>::iterator end = nodes.end();
+            int i = 0;
+            for (; i < length; i++)
             {
-                Node *temp = (*it).first;
+                AnnotatedNode annotatedNode = nodes.front();
                 nodes.pop_front();
-                list<pair<Node *, bool>>::iterator it2 = nodes.begin();
-                while (it2 != end)
+
+                if (i != length - 1)
                 {
-                    if ((*it2).second)
+                    for (list<AnnotatedNode>::iterator it = nodes.begin(); it != nodes.end(); it++)
                     {
-                        temp->next = (*it2).first;
+                        AnnotatedNode temp = *it;
+                        if(temp.isRight == true &&  temp.level == annotatedNode.level){
+                            annotatedNode.node->next = (*it).node;
+                            break;
+                        }
                     }
-                    it2++;
                 }
-                if (NULL != temp->left)
+                if (annotatedNode.node->left != NULL)
                 {
-                    nodes.push_back(pair<Node *, bool>(temp->left, false));
+                    nodes.push_back(AnnotatedNode(annotatedNode.node->left, false, level));
                 }
-                if (NULL != temp->right)
+                if (annotatedNode.node->right != NULL)
                 {
-                    nodes.push_back(pair<Node *, bool>(temp->right, false));
+                    nodes.push_back(AnnotatedNode(annotatedNode.node->right, true, level));
                 }
             }
         }
+
         return root;
     }
 };
