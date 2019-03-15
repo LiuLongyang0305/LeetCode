@@ -557,3 +557,78 @@ class Q680_Solution {
         return true
     }
 }
+
+class Q709_Solution {
+    func toLowerCase(_ str: String) -> String {
+        return str.lowercased()
+    }
+}
+
+class Q929_Solution {
+    var emailAddresses : Set<String> = Set<String>()
+    func numUniqueEmails(_ emails: [String]) -> Int {
+        for email in emails {
+            let validEmail = getValidEmailAddress(email)
+            if !emailAddresses.contains(validEmail) {
+                emailAddresses.insert(validEmail)
+            }
+        }
+        return emailAddresses.count
+    }
+    private func getValidEmailAddress(_ email : String) -> String {
+        let subStrs = email.split(separator: "@")
+        var localNames = subStrs[0].split(separator: "+")
+        localNames[0].removeAll { $0 == "."}
+        return  (localNames[0] + "@" + subStrs[1])
+    }
+}
+
+class Q804_Solution {
+    var transformeResults : Set<String> = Set<String>()
+    let charToMorse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+    func uniqueMorseRepresentations(_ words: [String]) -> Int {
+        for word in words {
+            var result = ""
+            let chars = word.utf8.map { (val) -> Int in
+                return Int(val) - 97
+            }
+            for char in chars {
+                result += charToMorse[char]
+            }
+            if !transformeResults.contains(result) {
+                transformeResults.insert(result)
+            }
+        }
+        return transformeResults.count
+    }
+}
+
+class Q917_Solution {
+    func reverseOnlyLetters(_ S: String) -> String {
+        if S.isEmpty {
+            return S
+        }
+        
+        var str = Array<Character>(S)
+        let strUtf8Array = Array<UInt8>(S.utf8)
+        var i : Int = 0
+        var j : Int = str.count - 1
+        while i < j {
+            while  i < j && !isCharacter(char: strUtf8Array[i]){
+                i += 1
+            }
+            while i < j && !isCharacter(char: strUtf8Array[j]) {
+                j -= 1
+            }
+            if i != j {
+                str.swapAt(i, j)
+                i += 1
+                j -= 1
+            }
+        }
+        return String(str)
+    }
+    private func isCharacter(char: UInt8) -> Bool {
+        return (char >= 65 && char <= 90) || (char >= 97 && char <= 122)
+    }
+}
