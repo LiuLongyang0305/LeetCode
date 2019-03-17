@@ -743,6 +743,6 @@ class Q788_Solution {
             }
             temp /= 10
         }
-        return !(digitSet == rotateEqual)
+        return !digitSet.intersection(rotateNotEqual).isEmpty
     }
 }
