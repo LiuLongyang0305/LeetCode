@@ -632,3 +632,117 @@ class Q917_Solution {
         return (char >= 65 && char <= 90) || (char >= 97 && char <= 122)
     }
 }
+
+class Q925_Solution {
+    func isLongPressedName(_ name: String, _ typed: String) -> Bool {
+        let nameCount = name.count
+        let typeCount = typed.count
+        guard nameCount <= typeCount else {
+            return false
+        }
+        guard !name.isEmpty && !typed.isEmpty else {
+            return false
+        }
+        
+        let nameChars = Array<Character>(name)
+        let typedChars = Array<Character>(typed)
+        guard nameChars[0] == typedChars[0] else {
+            return false
+        }
+        var i : Int = 1
+        var j : Int = 1
+        
+        while i < nameCount && j < typeCount{
+            if nameChars[i] != typedChars[j] {
+                if typedChars[j] != typedChars[j - 1]{
+                    return false
+                }
+                j += 1
+            } else {
+                i += 1
+                j += 1
+            }
+        }
+        if i < nameCount {
+            return false
+        }
+        while j < typeCount {
+            if typedChars[j] != typedChars[j - 1] {
+                return false
+            } else {
+                j += 1
+            }
+        }
+        
+        return true
+    }
+}
+
+class Q893_Solution {
+    func numSpecialEquivGroups(_ A: [String]) -> Int {
+        var  specialEquivalentStringCountSet = Set<[Int]>()
+        for str in A {
+            specialEquivalentStringCountSet.insert(getStringPartion(source: str))
+        }
+        return  specialEquivalentStringCountSet.count
+    }
+    private func getStringPartion(source: String) -> [Int] {
+        var result  = Array<Int>(repeating: 0, count: 52)
+        var index = 0
+        for char in source.utf8 {
+            let tempIndex = 26 * (index % 2 == 0 ? 0 : 1) + Int(char) - 97
+            result[tempIndex] = result[tempIndex] + 1
+            index += 1
+        }
+        return result
+    }
+}
+
+class Q824_Solution {
+    var vowels : Set<Character> = ["a","e","i","o","u","A","E","I","O","U"]
+    func toGoatLatin(_ S: String) -> String {
+        var result = ""
+        let subStrs = S.split(separator: " ")
+        var  suffix  = "a"
+        for item in subStrs {
+            var temp = item
+            if !vowels.contains(temp.first!) {
+                let char = temp.removeFirst()
+                temp.append(char)
+            }
+            result += (temp + "ma" + suffix + " ")
+            suffix += "a"
+        }
+        result.removeLast()
+        return result
+    }
+}
+
+class Q788_Solution {
+    let rotateEqual : Set<Int> = [0,1,8]
+    let rotateNotEqual : Set<Int>  = [2,5,6,9]
+    let rotateInvalid :  Set<Int> = [3,4,7]
+    func rotatedDigits(_ N: Int) -> Int {
+        var count = 0
+        for i in 1...N {
+            if isGoodNumber(i) {
+                count += 1
+            }
+        }
+        return count
+    }
+    private func isGoodNumber(_ number: Int) -> Bool {
+        var temp = number
+        var digitSet : Set<Int> = Set<Int>()
+        while temp > 0 {
+            let digit = temp % 10
+            if rotateInvalid.contains(digit) {
+                return false
+            } else {
+                digitSet.insert(digit)
+            }
+            temp /= 10
+        }
+        return !(digitSet == rotateEqual)
+    }
+}
