@@ -85,3 +85,91 @@ class Q704_Solution {
         return -1
     }
 }
+
+class Q35_Solution {
+    func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+        if target <= nums[0] || nums.isEmpty {
+            return 0
+        }
+        if target > nums.last! {
+            return nums.count
+        }
+        var left = 0
+        var right = nums.count
+        while left < right - 1 {
+            let middle = (left + right) / 2
+            if nums[middle] == target {
+                return middle
+            } else if nums[middle] < target {
+                left = middle
+            } else {
+                right = middle
+            }
+        }
+        return left + 1
+    }
+}
+
+class Q367_Solution {
+    func isPerfectSquare(_ num: Int) -> Bool {
+        var left = 0
+        var right = num
+        while left < right - 1 {
+            let middle = (left + right) / 2
+            let rel = middle * middle
+            if rel == num {
+                return true
+            } else if rel > num {
+                right = middle
+            } else {
+                left = middle
+            }
+        }
+        if left * left == num || right * right == num {
+            return true
+        }
+        return false
+    }
+}
+
+class Q441_Solution {
+    func arrangeCoins(_ n: Int) -> Int {
+        if n < 2 {
+            return n
+        }
+        var low = 1
+        var high = n - 1
+        while low < high {
+            let mid = low + (high - low) / 2
+            let rel = mid * (mid + 1) / 2
+            let rel2 = (mid + 1) * (mid + 2) / 2
+            if rel <= n && rel2 > n {
+                return mid
+            } else if rel > n {
+                high = mid - 1
+            } else {
+                low = mid + 1
+            }
+        }
+        return low
+    }
+}
+class Q69_Solution {
+    func mySqrt(_ x: Int) -> Int {
+        var low = 0
+        var high = x
+        while low < high {
+            let mid = low + (high - low) / 2
+            let powMid = mid * mid
+            let powMidPlusOne = (mid + 1) * (mid) + 1
+            if powMid <= x && powMidPlusOne > x {
+                return mid
+            } else if powMid > x {
+                high = mid - 1
+            } else {
+                low = mid + 1
+            }
+        }
+        return low * low == x ? low : (low - 1)
+    }
+}
