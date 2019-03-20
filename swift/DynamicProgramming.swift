@@ -62,3 +62,47 @@ class Q152_Solution {
         return result
     }
 }
+
+class Q122_Solution {
+    func maxProfit(_ prices: [Int]) -> Int {
+        if prices.isEmpty {
+            return 0
+        }
+        var maxProfit = 0
+        var dp : [[Int]] = Array<[Int]>(repeating: Array<Int>(repeating: 0, count: 2), count: prices.count)
+        dp[0][0] = 0
+        dp[0][1] = -prices[0]
+        for i in 1..<prices.count {
+            dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
+            dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] - prices[i])
+            if dp[i][0] > maxProfit {
+                maxProfit = dp[i][0]
+            }
+            if dp[i][1] > maxProfit {
+                maxProfit = dp[i][1]
+            }
+        }
+        return maxProfit
+    }
+}
+
+class Q121_Solution {
+    func maxProfit(_ prices: [Int]) -> Int {
+        if prices.count < 2 {
+            return 0
+        }
+        var minPrice = prices[0]
+        var maxProfit = 0
+        for i in 1..<prices.count {
+            let currentPrice = prices[i]
+            if currentPrice < minPrice {
+                minPrice = prices[i]
+            }
+            let currentProfit = currentPrice - minPrice
+            if currentProfit > maxProfit {
+                maxProfit = currentProfit
+            }
+        }
+        return maxProfit
+    }
+}
