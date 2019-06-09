@@ -2,7 +2,7 @@
 
 ## cpp
 
-I used to solve the problems with c/cpp and I will add c/cpp code in he future.
+I used to solve the problems with c/cpp and I will add c/cpp code in the future.
 
 ## swift
 
