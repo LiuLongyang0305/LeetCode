@@ -6,7 +6,7 @@ class Solution {
         var parents = Array<Int>(repeating: -1, count: size)
         var children = Array<Array<Int>>(repeating: Array<Int>(), count: size)
 
-        func getParents(){
+        func getParentsAndChildren(){
             for edge in edges {
                 children[edge[0]].append(edge[1])
                 children[edge[1]].append(edge[0])
@@ -82,7 +82,7 @@ class Solution {
         guard edges.count > 3 else {
             return edges.count < 3 ? [Int]() : edges[2]
         }
-        getParents()
+        getParentsAndChildren()
         return getRedundantConnection()
     }
 }
