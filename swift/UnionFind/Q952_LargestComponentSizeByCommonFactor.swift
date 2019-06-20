@@ -20,28 +20,21 @@ key = 829 value = [829]
 
 class Solution {
     class UnionFind {
-        var parents = Array<Int>(repeating: -1, count: 100001)
-        //        init() {
-        //            for i in 0..<100001 {
-        //                parents[i] = i
-        //            }
-        //        }
+        var parents = Array<Int>(0..<100001)
+        
         func union(x: Int, y: Int) {
             let parentX = find(x: x)
             let parentY = find(x: y)
-           
+            
             if parentY == y {
+                parents[parentX] = parentY
+            } else if parentX == x {
                 parents[parentY] = parentX
             } else {
                 parents[parentX] = parentY
             }
         }
         func find(x: Int) -> Int {
-            
-            if parents[x] == -1 {
-                parents[x] = x
-                return x
-            }
             
             var currentRoot = x
             var temp = x
@@ -68,54 +61,36 @@ class Solution {
     let factors = [ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
                     103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197,
                     199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313]
-    
     func largestComponentSize(_ A: [Int]) -> Int {
         
         var count = Dictionary<Int,[Int]>()
         for factor in factors {
             count[factor] = [Int]()
         }
+        
         let unionFind = UnionFind()
         
-        func union(factor: Int, element: Int) {
-            count[factor]?.append(element)
-            if unionFind.parents[element] == -1 {
-                unionFind.parents[element] = element
+        func unionElements(factor: Int, tail: Int) {
+            for node in count[factor]! {
+                if !unionFind.connected(x: node, y: tail) {
+                    unionFind.union(x: node, y: tail)
+                }
             }
+            count[factor]?.append(tail)
         }
-        
         
         for element in A {
             if factors.contains(element) {
-                union(factor: element, element: element)
+                unionElements(factor: element, tail: element)
             }  else {
                 var i = 0
                 while i < factors.count &&  factors[i] <= element / 2 {
-                    
                     if element % factors[i] == 0 {
-                        union(factor: factors[i], element: element)
+                        unionElements(factor: factors[i], tail: element)
                     }
                     i += 1
                 }
             }
-        }
-        
-        for i in 0..<factors.count {
-            let arr = count[factors[i]]!
-            if arr.count >= 2 {
-                for index in 1..<arr.count {
-                    if !unionFind.connected(x: arr[0], y: arr[index]) {
-                        unionFind.union(x: arr[0], y: arr[index])
-                    }
-                }
-//                var str = ""
-//                for ele in arr {
-//                    str += "  \(ele) ---> \(unionFind.parents[ele])  "
-//                }
-//                print(str)
-//                print("***************")
-            }
-
         }
         
         var rootToNodes = Dictionary<Int,Set<Int>>()
@@ -126,14 +101,13 @@ class Solution {
             }
             rootToNodes[par]?.insert(ele)
         }
-        print(count.filter({ (key,value) -> Bool in
-            !value.isEmpty
-        }))
-//        print(rootToNodes)
-
+        //        print(count.filter({ (key,value) -> Bool in
+        //            !value.isEmpty
+        //        }))
+        //        print(rootToNodes)
+        
         var maxSize = 0
-        for (key,value) in rootToNodes {
-//            print("key = \(key) value = \(value)")
+        for (_,value) in rootToNodes {
             if value.count > maxSize {
                 maxSize = value.count
             }
