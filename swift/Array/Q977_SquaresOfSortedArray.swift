@@ -17,9 +17,9 @@ class Solution {
         var i = 0
         var j = A.count - 1
         while i <= j {
-            let a = A[i]
-            let b = A[j]
-            if abs(a) < abs(b) {
+            let a = abs(A[i])
+            let b = abs(A[j])
+            if a < b {
                 result.insert(b * b, at: 0)
                 j -= 1
             } else {
