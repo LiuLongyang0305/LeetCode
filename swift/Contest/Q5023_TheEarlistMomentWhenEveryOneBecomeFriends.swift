@@ -27,22 +27,20 @@ class Solution {
             return connect == 0
         }
     }
+    
     func earliestAcq(_ logs: [[Int]], _ N: Int) -> Int {
-        
         let uf = UnionFind(size: N)
-        var minTime = Int.min
-        for log in logs {
-            if !uf.isAllKnown() {
-                uf.union(first: log[1], second:log[2])
-                if log[0] > minTime {
-                    minTime = log[0]
-                }
-            } else {
-                if log[0] < minTime {
-                    minTime = log[0]
-                }
+        let logsCopy = logs.sorted { (log1, log2) -> Bool in
+            log1[0] < log2[0]
+        }
+        for log in logsCopy {
+            uf.union(first: log[1], second:log[2])
+            
+            if uf.isAllKnown() {
+                return log[0]
             }
         }
-        return minTime
+        
+        return -1
     }
 }
