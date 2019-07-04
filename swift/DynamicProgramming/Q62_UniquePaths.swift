@@ -11,9 +11,9 @@ class Solution {
         }
 
         let totalSteps = m - 1 + n - 1
-        var totalStepsSet = Set<Int>(2...totalSteps)
-        var p1 = Set<Int>(2...(m - 1))
-        var p2 = Set<Int>(2...(n - 1))
+        var totalStepsSet = Set<Int>(1...totalSteps)
+        var p1 = Set<Int>(1...(m - 1))
+        var p2 = Set<Int>(1...(n - 1))
         for ele in p1 {
             if totalStepsSet.contains(ele) {
                 totalStepsSet.remove(ele)
