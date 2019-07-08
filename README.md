@@ -2,7 +2,7 @@
 
 ## Tree
 
-|||
+|#|Solution|
 |:--|:----|
 |79|[DistributeCoinsInBinaryTree.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/79_DistributeCoinsInBinaryTree.swift)|
 |94|[BinaryTreeInorderTraversal.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/94_BinaryTreeInorderTraversal.swift)|
@@ -88,7 +88,7 @@
 
 ## Hash
 
-|||
+|#|Solution|
 |:--|:----|
 |1|[TwoSum.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/1_TwoSum.swift)|
 |36|[ValidSudoku.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/36_ValidSudoku.swift)|
@@ -108,7 +108,7 @@
 
 ## Array
 
-|||
+|#|Solution|
 |:--|:----|
 |26|[RemoveDuplicatesFromSortedArray.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/26_RemoveDuplicatesFromSortedArray.swift)|
 |27|[RemoveElements.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/27_RemoveElements.swift)|
@@ -166,7 +166,7 @@
 
 ## UnionFind
 
-|||
+|#|Solution|
 |:--|:----|
 |130|[SurroundedRegions.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/UnionFind/130_SurroundedRegions.swift)|
 |200|[NumberOfIslands.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/UnionFind/200_NumberOfIslands.swift)|
@@ -182,7 +182,7 @@
 
 ## LinkedList
 
-|||
+|#|Solution|
 |:--|:----|
 |2|[AddTwoNumber.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/LinkedList/2_AddTwoNumber.swift)|
 |19|[RemoveNthNodeFromListEnd.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/LinkedList/19_RemoveNthNodeFromListEnd.swift)|
@@ -213,7 +213,7 @@
 
 ## BinarySearch
 
-|||
+|#|Solution|
 |:--|:----|
 |35|[SearchInsertPosition.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/35_SearchInsertPosition.swift)|
 |50|[Pow.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/50_Pow.swift)|
@@ -228,7 +228,7 @@
 
 ## Graph
 
-|||
+|#|Solution|
 |:--|:----|
 |207|[CourseSchedule.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/207_CourseSchedule.swift)|
 |210|[CourseSchedueII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/210_CourseSchedueII.swift)|
@@ -244,7 +244,7 @@
 
 ## Math
 
-|||
+|#|Solution|
 |:--|:----|
 |7|[ReverseInteger.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/7_ReverseInteger.swift)|
 |9|[PalindromeNumber.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/9_PalindromeNumber.swift)|
@@ -275,21 +275,21 @@
 
 ## Trie
 
-|||
+|#|Solution|
 |:--|:----|
 |208|[ImplementTrie.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Trie/208_ImplementTrie.swift)|
 |720|[LongestWord.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Trie/720_LongestWord.swift)|
 
 ## Heap
 
-|||
+|#|Solution|
 |:--|:----|
 |1046|[LastStoneWeight.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Heap/1046_LastStoneWeight.swift)|
 |1054|[DistantBarcodes.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Heap/1054_DistantBarcodes.swift)|
 
 ## Greedy
 
-|||
+|#|Solution|
 |:--|:----|
 |55|[JumpGame.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/55_JumpGame.swift)|
 |134|[GasStations.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/134_GasStations.swift)|
@@ -321,7 +321,7 @@
 
 ## String
 
-|||
+|#|Solution|
 |:--|:----|
 |8|[String2Integer.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/8_String2Integer.swift)|
 |13|[Roman2Integer.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/13_Roman2Integer.swift)|
@@ -358,14 +358,14 @@
 
 ## Stack
 
-|||
+|#|Solution|
 |:--|:----|
 |155|[MinStack.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/155_MinStack.swift)|
 |921|[MinimumAddToMakeParenthesesValid.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/921_MinimumAddToMakeParenthesesValid.swift)|
 
 ## DynamicProgramming
 
-|||
+|#|Solution|
 |:--|:----|
 |62|[UniquePaths.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/62_UniquePaths.swift)|
 |64|[MinimumPathSum.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/64_MinimumPathSum.swift)|
@@ -395,7 +395,7 @@
 
 ## Contest
 
-|||
+|#|Solution|
 |:--|:----|
 |5021|[TwoSumLessThanK.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Contest/5021_TwoSumLessThanK.swift)|
 |5022|[FindKLengthSubstringsWithNoRepeatedChars.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Contest/5022_FindKLengthSubstringsWithNoRepeatedChars.swift)|
