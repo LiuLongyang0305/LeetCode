@@ -7,9 +7,12 @@ class Solution {
     }
     
     typealias Log = (functionID: Int, status: FunctionStatus, time: Int)
+    
     func exclusiveTime(_ n: Int, _ logs: [String]) -> [Int] {
+        
         var ans = Array<Int>(repeating: 0, count: n)
         var stack = Array<Log>()
+        
         for log in logs {
             let currentLog = logToTuple(log: log)
             if currentLog.status == .start {
@@ -17,14 +20,16 @@ class Solution {
                 continue
             }
             let lastLog = stack.removeLast()
-                let deltaTime = currentLog.time - lastLog.time + 1
-                ans[currentLog.functionID] += deltaTime
-                if !stack.isEmpty {
-                    ans[stack.last!.functionID] -= deltaTime
-                }
+            let deltaTime = currentLog.time - lastLog.time + 1
+            ans[currentLog.functionID] += deltaTime
+            if !stack.isEmpty {
+                ans[stack.last!.functionID] -= deltaTime
+            }
         }
+        
         return ans
     }
+    
     private func logToTuple(log: String) -> Log {
         var parts = log.split(separator: ":")
         return (Int(parts[0])!,parts[1] == "start" ? FunctionStatus.start : FunctionStatus.end, Int(parts[2])!)
