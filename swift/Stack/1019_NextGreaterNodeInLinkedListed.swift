@@ -37,3 +37,29 @@ class Solution {
         return ans
     }
 }
+
+class Solution2 {
+    func nextLargerNodes(_ head: ListNode?) -> [Int] {
+        guard head != nil else {
+            return [Int]()
+        }
+        var elements = [Int]()
+        var temp = head
+        while nil != temp {
+            elements.append(temp!.val)
+            temp = temp?.next
+        }
+        let length = elements.count
+        var dic = [Int:Int]()
+        var stack = [Int]()
+        var ans = Array<Int>(repeating: 0, count: length)
+        for i in 0..<length {
+            let target = elements[i]
+            while !stack.isEmpty && elements[stack.last!] < elements[i] {
+                ans[stack.removeLast()] = target
+            }
+            stack.append(i)
+        }
+        return ans
+    }
+}
