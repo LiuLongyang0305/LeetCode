@@ -9,8 +9,6 @@ class Q415_Solution {
         if num1.isEmpty || num2.isEmpty {
             return num2 + num1
         }
-        let charToInt : Dictionary<Character,Int> = ["0":0,"1":1,"2":2,"3":3,"4":4,"5":5,"6":6,"7":7,"8":8,"9":9]
-        let intToChar : Array<Character> = ["0","1","2","3","4","5","6","7","8","9"]
         var index1 = num1.index(before: num1.endIndex)
         var index2 = num2.index(before: num2.endIndex)
         let startIndex1 = num1.startIndex
@@ -49,7 +47,9 @@ class Q415_Solution {
 
 class Solution2 {
     func addStrings(_ num1: String, _ num2: String) -> String {
-//        let size = max(num2.count, num1.count)
+        if num1.isEmpty || num2.isEmpty {
+            return num2 + num1
+        }
         let first  = (num2.count >= num1.count ? num2 : num1).map { (ch) -> Int in
             charToInt[ch]!
         }
