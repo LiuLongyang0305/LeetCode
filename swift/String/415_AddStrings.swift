@@ -1,3 +1,9 @@
+
+//https://leetcode.com/problems/add-strings/
+
+let charToInt : Dictionary<Character,Int> = ["0":0,"1":1,"2":2,"3":3,"4":4,"5":5,"6":6,"7":7,"8":8,"9":9]
+let intToChar : Array<Character> = ["0","1","2","3","4","5","6","7","8","9"]
+
 class Q415_Solution {
     func addStrings(_ num1: String, _ num2: String) -> String {
         if num1.isEmpty || num2.isEmpty {
@@ -38,5 +44,33 @@ class Q415_Solution {
             result.insert(intToChar[carry], at: result.startIndex)
         }
         return result
+    }
+}
+
+class Solution2 {
+    func addStrings(_ num1: String, _ num2: String) -> String {
+//        let size = max(num2.count, num1.count)
+        let first  = (num2.count >= num1.count ? num2 : num1).map { (ch) -> Int in
+            charToInt[ch]!
+        }
+        var second = (num2.count < num1.count ? num2 : num1).map({ (ch) -> Int in
+            charToInt[ch]!
+        })
+        let size = first.count
+        let delta =  size - second.count
+        second.insert(contentsOf: Array<Int>(repeating: 0, count: delta), at: 0)
+        var ans = ""
+        var  carry = 0
+        var i = size - 1
+        while i >= 0 {
+            let temp = first[i] + second[i] + carry
+            ans.insert(intToChar[temp % 10], at: ans.startIndex)
+            carry = temp / 10
+            i -= 1
+        }
+        if carry != 0 {
+            ans.insert("1", at: ans.startIndex)
+        }
+        return ans
     }
 }
