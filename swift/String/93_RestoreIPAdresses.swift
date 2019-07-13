@@ -1,7 +1,7 @@
 //https://leetcode.com/problems/restore-ip-addresses/
 class Solution {
     func restoreIpAddresses(_ s: String) -> [String] {
-        guard s.count >=  4 else {
+        guard s.count >=  4  &&  s.count < 13 else {
             return [String]()
         }
         var ans = [String]()
@@ -36,7 +36,7 @@ class Solution {
         return ans
     }
     
-    func validComponent(compoment: String) -> Bool {
+    private  func validComponent(compoment: String) -> Bool {
         if compoment.count != 1 {
             if compoment.first! == "0" {
                 return false
@@ -50,3 +50,4 @@ class Solution {
         return true
     }
 }
+
