@@ -20,7 +20,7 @@ class Solution {
         return maxAverage
     }
     
-    func getTreeSumAndCount(root: TreeNode?) -> TreeSumAndCount {
+    private func getTreeSumAndCount(root: TreeNode?) -> TreeSumAndCount {
         var ans: TreeSumAndCount = (0,0)
         ans.sum = root!.val
         ans.count = 1
