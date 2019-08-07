@@ -25,3 +25,45 @@ class Solution {
         return maxDistance == Int.max ? -1 : maxDistance
     }
 }
+
+class Solution2 {
+    struct Edge {
+        var from: Int
+        var to: Int
+        var weight: Int
+    }
+    func networkDelayTime(_ times: [[Int]], _ N: Int, _ K: Int) -> Int {
+        var  adjacencyList = Array<Array<Edge>>(repeating: Array<Edge>(), count: N + 1)
+        var timeCostTo = Array<Int>(repeating: Int.max, count: N + 1)
+        timeCostTo[K] = 0
+        var edgeSet = [Int:Int]()
+        for time in times {
+            let edge = Edge(from: time[0], to: time[1], weight: time[2])
+            adjacencyList[edge.from].append(edge)
+        }
+        
+        edgeSet[K] = 0
+        while !edgeSet.isEmpty {
+            let sortedEdge = edgeSet.sorted { (e1, e2) -> Bool in
+                e1.value < e2.value
+            }
+            let key =  sortedEdge.first!.key
+            edgeSet.removeValue(forKey: key)
+            for tempEdge in adjacencyList[key] {
+                let to = tempEdge.to
+                let tempTimeCost = timeCostTo[key]
+                if tempTimeCost != Int.max {
+                    if  timeCostTo[to] > tempTimeCost + tempEdge.weight {
+                        timeCostTo[to] = tempTimeCost + tempEdge.weight
+                        edgeSet[to] = tempEdge.weight
+                    }
+                }
+            }
+        }
+        timeCostTo.removeFirst()
+        let maxTime = timeCostTo.max()!
+        return maxTime == Int.max ? -1 :  maxTime
+    }
+}
+
+
