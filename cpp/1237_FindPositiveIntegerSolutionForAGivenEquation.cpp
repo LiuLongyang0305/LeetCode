@@ -24,15 +24,20 @@ public:
             }
         }
         int yMax = left;
-//        cout << xMax << "     " << yMax << endl;
         vector<vector<int>> ans;
-        for (int i = 1; i <= xMax; ++i) {
-            for (int j = 1; j <= yMax; ++j) {
-                if (customfunction.f(i, j) == z) {
-                    vector<int> temp;
-                    temp.push_back(i);
-                    temp.push_back(j);
-                    ans.push_back(temp);
+        for (int k = 1; k <= xMax; ++k) {
+            left = 1;
+            right = yMax;
+            while (left < right) {
+                int mid = (left + right) >> 1;
+                int rel = customfunction.f(k, mid);
+                if (rel > z) {
+                    right = mid;
+                } else if (rel < z) {
+                    left = mid + 1;
+                } else {
+                    ans.push_back(vector<int>({k,mid}));
+                    break;
                 }
             }
         }
