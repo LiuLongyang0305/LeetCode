@@ -24,3 +24,21 @@ class Solution {
         return -1
     }
 }
+
+class Solution {
+    func majorityElement(_ nums: [Int]) -> Int {
+        var majority = nums[0]
+        var count = 0
+        for i in 1..<nums.count {
+            if count == 0 {
+                majority = nums[i]
+                count += 1
+            } else if nums[i] == majority {
+                count += 1
+            } else {
+            count -= 1
+            }
+        }
+        return majority
+    }
+}
