@@ -9,7 +9,6 @@ class Solution {
         var visited = Set<Int>()
         var depth = 0
         while !nodes.isEmpty {
-            print(nodes)
             let length = nodes.count
             depth += 1
             for _ in 0..<length {
