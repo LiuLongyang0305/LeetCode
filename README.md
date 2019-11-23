@@ -637,3 +637,57 @@
 |5022|[FindKLengthSubstringsWithNoRepeatedChars.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Contest/5022_FindKLengthSubstringsWithNoRepeatedChars.swift)|
 |5023|[TheEarlistMomentWhenEveryOneBecomeFriends.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Contest/5023_TheEarlistMomentWhenEveryOneBecomeFriends.swift)|
 
+## Backtracking
+
+|#|Solution|
+|:--|:----|
+|40|[CombinationSumII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/40_CombinationSumII.swift)|
+|46|[Permutations.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/46_Permutations.swift)|
+|47|[PermutationsII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/47_PermutationsII.swift)|
+|77|[Combinations.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/77_Combinations.swift)|
+|131|[PalindromePartitioning.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/131_PalindromePartitioning.swift)|
+|526|[BeautifulArrangement.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/526_BeautifulArrangement.swift)|
+|980|[UniquePathIII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/980_UniquePathIII.swift)|
+|996|[NumberOfSquarefulArrays.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/996_NumberOfSquarefulArrays.swift)|
+|1079|[LetterTitlePossibilities.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/1079_LetterTitlePossibilities.swift)|
+|1258|[SynonymousSentence.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/1258_SynonymousSentence.swift)|
+
+## BitMapipulation
+
+|#|Solution|
+|:--|:----|
+|78|[Subsets.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/78_Subsets.swift)|
+|90|[SubsetII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/90_SubsetII.swift)|
+|260|[SingleNumberIII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/260_SingleNumberIII.swift)|
+|401|[BinaryWatch.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/401_BinaryWatch.swift)|
+|476|[NummberComplement.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/476_NummberComplement.swift)|
+|477|[TotalHammingDistance.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/477_TotalHammingDistance.swift)|
+|693|[BinaryNumberWithAlternatingBits.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/693_BinaryNumberWithAlternatingBits.swift)|
+|762|[PrimeNumberOfSetBitsInBinaryRepresentation.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/762_PrimeNumberOfSetBitsInBinaryRepresentation.swift)|
+|784|[LetterCasePermutation.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/784_LetterCasePermutation.swift)|
+|1256|[EncodeNumber.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/1256_EncodeNumber.swift)|
+
+## BreadFirstSearch
+
+|#|Solution|
+|:--|:----|
+|279|[PerfectSqures.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/279_PerfectSqures.swift)|
+|417|[PacificAtlanticWaterFlow.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/417_PacificAtlanticWaterFlow.swift)|
+|542|[OneZerosMartrix.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/542_OneZerosMartrix.swift)|
+|752|[OpenTheLock.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/752_OpenTheLock.swift)|
+|773|[SlidingPuzzle.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/773_SlidingPuzzle.swift)|
+|815|[BusRoutes.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/815_BusRoutes.swift)|
+|864|[ShortestPathToGetAllKeys.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/864_ShortestPathToGetAllKeys.swift)|
+|934|[ShortestBridge.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/934_ShortestBridge.swift)|
+|1091|[ShortestPathInBinaryMartrix.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1091_ShortestPathInBinaryMartrix.swift)|
+|1162|[AsFarFromLandAsPossible.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1162_AsFarFromLandAsPossible.swift)|
+|1210|[MinimumMovesToReachTargetWithRotations.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1210_MinimumMovesToReachTargetWithRotations.swift)|
+
+## DFS
+
+|#|Solution|
+|:--|:----|
+|733|[FloodFill.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DFS/733_FloodFill.swift)|
+|1020|[NumberOfEnclaves.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DFS/1020_NumberOfEnclaves.swift)|
+|1254|[NumberOfClosedIslands.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DFS/1254_NumberOfClosedIslands.swift)|
+
