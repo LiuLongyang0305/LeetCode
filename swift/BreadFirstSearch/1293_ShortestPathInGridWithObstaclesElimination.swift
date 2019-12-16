@@ -1,33 +1,38 @@
 //https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/ 
 class Solution {
-    private struct State: Hashable {
-        var  x: Int
+    
+    private struct State {
+        var x: Int
         var y: Int
         var remain: Int
     }
+    
     typealias Direction = (dx:Int,dy:Int)
     private let directions: [Direction] = [(0,1),(0,-1),(1,0),(-1,0)]
+    
     func shortestPath(_ grid: [[Int]], _ k: Int) -> Int {
-
+        
         let M = grid.count
         let N = grid[0].count
+        
         guard M != 1 || N != 1 else {
             return 0
         }
+        
         func valid(x: Int, y: Int) -> Bool {
             return x >= 0 && x <  M && y >= 0 && y < N
         }
+        
         var queue = [State]()
-        var visited = Set<State>()
-        let startState = State(x: 0, y: 0, remain: k)
-        queue.append(startState)
-        visited.insert(startState)
+        var visited = Array<Array<Int>>(repeating: Array<Int>(repeating: -1, count: N), count: M)
+        queue.append(State(x: 0, y: 0, remain: k))
+        visited[0][0] = k
+        
         var depth = 0
         while !queue.isEmpty {
             depth += 1
-            let length = queue.count
-            for _ in 0..<length {
-                let state = queue.removeFirst()
+            var nextLevel = [State]()
+            for state in queue {
                 for dir in directions {
                     
                     let nextX = state.x + dir.dx
@@ -40,14 +45,15 @@ class Solution {
                         if grid[nextX][nextY] == 1 {
                             nextState.remain = state.remain - 1
                         }
-                        if nextState.remain >= 0 && !visited.contains(nextState){
-                            queue.append(nextState)
-                            visited.insert(nextState)
+                        if nextState.remain >= 0 && visited[nextX][nextY] < nextState.remain {
+                            nextLevel.append(nextState)
+                            visited[nextX][nextY] = nextState.remain
                         }
+                        
                     }
                 }
             }
-            
+            queue = nextLevel
         }
         return -1
     }
