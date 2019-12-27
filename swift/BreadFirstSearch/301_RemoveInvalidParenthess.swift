@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/remove-invalid-parentheses/submissions/
+//https://leetcode.com/problems/remove-invalid-parentheses
 class Solution {
     func removeInvalidParentheses(_ s: String) -> [String] {
         guard !s.isEmpty else {
