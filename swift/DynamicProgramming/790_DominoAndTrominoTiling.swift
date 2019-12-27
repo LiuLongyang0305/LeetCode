@@ -2,14 +2,8 @@
 class Solution {
     private let MOD  = 1_000_000_007
     func numTilings(_ N: Int) -> Int {
-        guard N != 1 else {
-            return 1
-        }
-        guard N != 2 else {
-            return 2
-        }
-        guard N != 3 else {
-            return 5
+        guard N < 4 else {
+            return [1,2,5][N - 1]
         }
         var ans = (1,2,5)
         for _ in 4...N {
