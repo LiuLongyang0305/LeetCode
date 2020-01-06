@@ -1,4 +1,5 @@
-class Q125_Solution {
+ //https://leetcode.com/problems/valid-palindrome/
+ class Solution {
     func isPalindrome(_ s: String) -> Bool {
         if s.isEmpty {
             return true
@@ -15,17 +16,17 @@ class Q125_Solution {
                 arr.append(item)
             }
         }
-        
         var i = 0
         var j = arr.count - 1
         while i < j {
-            if arr[i] == arr[j] {
-                j -= 1
-                i += 1
-            } else {
+            if arr[i] != arr[j] {
                 return false
             }
+            
+            j -= 1
+            i += 1
         }
         return true
     }
-}
+ }
+ 
