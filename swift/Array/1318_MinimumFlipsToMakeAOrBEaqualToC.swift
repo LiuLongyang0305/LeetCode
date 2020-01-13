@@ -33,3 +33,24 @@ class Solution {
         return count
     }
  }
+
+ class Solution {
+    func minFlips(_ a: Int, _ b: Int, _ c: Int) -> Int {
+        
+        let length = max(Int(log2(Double(a))), Int(log2(Double(b))),Int(log2(Double(c)))) + 1
+        var count = 0
+        for i in 0..<length {
+            let a1 = a >> i & 1
+            let b1 = b >> i & 1
+            let c1 = c >> i & 1
+            if c1 == 1 {
+                if a1 != 1 && b1 != 1{
+                    count += 1
+                }
+            } else {
+                count += a1 + b1
+            }
+        }
+        return count
+    }
+ }
