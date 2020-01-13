@@ -21,3 +21,14 @@ class Solution {
  }
  
 
+ class Solution {
+    func getNoZeroIntegers(_ n: Int) -> [Int] {
+        for num in 1...(n >> 1) {
+            if !Set<Character>("\(num)\(n-num)").contains("0") {
+                return [num, n - num]
+            }
+        }
+        return []
+    }
+ }
+
