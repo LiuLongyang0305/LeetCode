@@ -25,3 +25,27 @@ class Solution {
     }
  }
 
+class Solution {
+    func deepestLeavesSum(_ root: TreeNode?) -> Int {
+        guard let root = root else {
+            return 0
+        }
+        var queue: [TreeNode] = [root]
+        var ans = -1
+        while !queue.isEmpty {
+            var nextLevel = [TreeNode]()
+            ans = 0
+            for node in queue {
+                ans += node.val
+                if let l = node.left {
+                    nextLevel.append(l)
+                }
+                if let r = node.right {
+                    nextLevel.append(r)
+                }
+            }
+            queue = nextLevel
+        }
+        return ans
+    }
+}
