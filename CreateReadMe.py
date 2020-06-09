@@ -10,6 +10,7 @@ with open(file_path, 'w') as read_me:
     read_me.write('\n')
     for dir_name in dir_names:
 
+        print "************   " + dir_name  + "  *******   "
         read_me.write('## ' + dir_name + '\n')
         read_me.write('\n')
 
@@ -20,6 +21,7 @@ with open(file_path, 'w') as read_me:
         read_me.write('|:--|:----|\n')
         dic = {0: ' '}
         for file_name in file_names:
+            count_files += 1
             parts = file_name.split('_')
             # name = parts[1]
             name = file_name
@@ -37,3 +39,4 @@ with open(file_path, 'w') as read_me:
             read_me.write('|' + parts[0] + '|' + label + '|\n')
 
         read_me.write('\n')
+
