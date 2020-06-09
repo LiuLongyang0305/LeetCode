@@ -17,11 +17,10 @@ with open(file_path, 'w') as read_me:
         current_path = path + '/' + dir_name
         file_names = os.listdir(current_path)
         current_website = websites + dir_name + '/'
-        read_me.write('|#|Solution|\n')
+        read_me.write('|#Number|Solution|\n')
         read_me.write('|:--|:----|\n')
         dic = {0: ' '}
         for file_name in file_names:
-            count_files += 1
             parts = file_name.split('_')
             # name = parts[1]
             name = file_name

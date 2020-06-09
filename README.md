@@ -2,7 +2,7 @@
 
 ## Tree
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |79|[DistributeCoinsInBinaryTree.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/79_DistributeCoinsInBinaryTree.swift)|
 |94|[BinaryTreeInorderTraversal.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/94_BinaryTreeInorderTraversal.swift)|
@@ -124,7 +124,7 @@
 
 ## Hash
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |1|[TwoSum.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/1_TwoSum.swift)|
 |18|[FourSum.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/18_FourSum.swift)|
@@ -187,7 +187,7 @@
 
 ## Array
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |11|[ContainerWithMostWater.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/11_ContainerWithMostWater.swift)|
 |15|[3Sum.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/15_3Sum.swift)|
@@ -370,7 +370,7 @@
 
 ## UnionFind
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |130|[SurroundedRegions.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/UnionFind/130_SurroundedRegions.swift)|
 |200|[NumberOfIslands.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/UnionFind/200_NumberOfIslands.swift)|
@@ -394,7 +394,7 @@
 
 ## LinkedList
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |2|[AddTwoNumber.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/LinkedList/2_AddTwoNumber.swift)|
 |19|[RemoveNthNodeFromListEnd.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/LinkedList/19_RemoveNthNodeFromListEnd.swift)|
@@ -430,7 +430,7 @@
 
 ## BinarySearch
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |33|[SearchInRotatedSortArrays.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/33_SearchInRotatedSortArrays.swift)|
 |34|[FindFirstAndLastPositionOfElementInSortedArray.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/34_FindFirstAndLastPositionOfElementInSortedArray.swift)|
@@ -473,7 +473,7 @@
 
 ## Graph
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |207|[CourseSchedule.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/207_CourseSchedule.swift)|
 |210|[CourseSchedueII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/210_CourseSchedueII.swift)|
@@ -495,7 +495,7 @@
 
 ## Math
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |7|[ReverseInteger.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/7_ReverseInteger.swift)|
 |9|[PalindromeNumber.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/9_PalindromeNumber.swift)|
@@ -583,7 +583,7 @@
 
 ## Trie
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |208|[ImplementTrie.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Trie/208_ImplementTrie.swift)|
 |211|[AddAndSearchWordDataStructureDesign.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Trie/211_AddAndSearchWordDataStructureDesign.swift)|
@@ -593,7 +593,7 @@
 
 ## Heap
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |295|[find-median-from-data-stream.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Heap/295_find-median-from-data-stream.swift)|
 |347|[TopKFrequentElements.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Heap/347_TopKFrequentElements.swift)|
@@ -608,7 +608,7 @@
 
 ## Greedy
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |55|[JumpGame.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/55_JumpGame.swift)|
 |134|[GasStations.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/134_GasStations.swift)|
@@ -648,7 +648,7 @@
 
 ## String
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |3|[LongestSubstringWithoutRepeatingChars.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/3_LongestSubstringWithoutRepeatingChars.swift)|
 |5|[LongestPalindromicSubstring.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/5_LongestPalindromicSubstring.swift)|
@@ -774,7 +774,7 @@
 
 ## Stack
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |71|[SimplifyPath.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/71_SimplifyPath.swift)|
 |150|[EvaluateReversePolishNotation.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/150_EvaluateReversePolishNotation.swift)|
@@ -807,7 +807,7 @@
 
 ## DynamicProgramming
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |44|[WildcardMatching.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/44_WildcardMatching.swift)|
 |62|[UniquePaths.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/62_UniquePaths.swift)|
@@ -892,7 +892,7 @@
 
 ## Contest
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |1180|[CountSubstringsWithOnlyOneDistinctLetter.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Contest/1180_CountSubstringsWithOnlyOneDistinctLetter.swift)|
 |1181|[BeforeAndAfterPuzzle.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Contest/1181_BeforeAndAfterPuzzle.swift)|
@@ -903,7 +903,7 @@
 
 ## Backtracking
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |40|[CombinationSumII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/40_CombinationSumII.swift)|
 |46|[Permutations.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Backtracking/46_Permutations.swift)|
@@ -923,7 +923,7 @@
 
 ## BitMapipulation
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |78|[Subsets.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/78_Subsets.swift)|
 |90|[SubsetII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/90_SubsetII.swift)|
@@ -948,7 +948,7 @@
 
 ## BreadFirstSearch
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |45|[JumpGameII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/45_JumpGameII.swift)|
 |279|[PerfectSqures.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/279_PerfectSqures.swift)|
@@ -985,7 +985,7 @@
 
 ## DFS
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |212|[WordSearch.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DFS/212_WordSearch.swift)|
 |247|[StrobogramaticNumber.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DFS/247_StrobogramaticNumber.swift)|
@@ -1021,7 +1021,7 @@
 
 ## Sort
 
-|#|Solution|
+|#Number|Solution|
 |:--|:----|
 |179|[LargestNumber.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Sort/179_LargestNumber.swift)|
 |252|[MeetingRooms.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Sort/252_MeetingRooms.swift)|
