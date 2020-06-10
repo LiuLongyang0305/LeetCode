@@ -1040,9 +1040,9 @@
 |4|[er-wei-shu-zu-zhong-de-cha-zhao-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/4_er-wei-shu-zu-zhong-de-cha-zhao-lcof.swift)|
 |5|[ti-huan-kong-ge-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/5_ti-huan-kong-ge-lcof.swift)|
 |6|[cong-wei-dao-tou-da-yin-lian-biao-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/6_cong-wei-dao-tou-da-yin-lian-biao-lcof.swift)|
-|07|[zhong-jian-er-cha-shu-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/07_zhong-jian-er-cha-shu-lcof.swift)|
+|7|[zhong-jian-er-cha-shu-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/7_zhong-jian-er-cha-shu-lcof.swift)|
 |9|[yong-liang-ge-zhan-shi-xian-dui-lie-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/9_yong-liang-ge-zhan-shi-xian-dui-lie-lcof.swift)|
-|10|[ fei-bo-na-qi-shu-lie-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/10_ fei-bo-na-qi-shu-lie-lcof.swift)|
+|10|[fei-bo-na-qi-shu-lie-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/10_fei-bo-na-qi-shu-lie-lcof.swift)|
 |11|[xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/11_xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof.swift)|
 |12|[ju-zhen-zhong-de-lu-jing-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/12_ju-zhen-zhong-de-lu-jing-lcof.swift)|
 |13|[ji-qi-ren-de-yun-dong-fan-wei-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/13_ji-qi-ren-de-yun-dong-fan-wei-lcof.swift)|
