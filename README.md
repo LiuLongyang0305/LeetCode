@@ -121,6 +121,7 @@
 |1382|[BalanceABinarySearchTree.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/1382_BalanceABinarySearchTree.swift)|
 |1448|[CountGoodNodesInBinaryTree.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/1448_CountGoodNodesInBinaryTree.swift)|
 |1457|[PseudoPalindromicPathsInABinaryTree.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/1457_PseudoPalindromicPathsInABinaryTree.swift)|
+|1530|[number-of-good-leaf-nodes-pairs.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/1530_number-of-good-leaf-nodes-pairs.swift)|
 
 ## Hash
 
@@ -161,6 +162,7 @@
 |676|[ImplementMagicDictory.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/676_ImplementMagicDictory.swift)|
 |705|[DesignHashSet.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/705_DesignHashSet.swift)|
 |706|[DesignHashMap.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/706_DesignHashMap.swift)|
+|726|[number-of-atoms.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/726_number-of-atoms.swift)|
 |734|[SentenceSimilarity.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/734_SentenceSimilarity.swift)|
 |760|[FindAnagramMappings.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/760_FindAnagramMappings.swift)|
 |771|[JewelsAndStones.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/771_JewelsAndStones.swift)|
@@ -184,6 +186,8 @@
 |1282|[GroupThePeopleGivenTheGroupSizeTheyBelongto.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/1282_GroupThePeopleGivenTheGroupSizeTheyBelongto.swift)|
 |1331|[RankTransformOfAnArray.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/1331_RankTransformOfAnArray.swift)|
 |1418|[DisplayTableOfFoodOrdersInARestaurant.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/1418_DisplayTableOfFoodOrdersInARestaurant.swift)|
+|1539|[kth-missing-positive-number.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/1539_kth-missing-positive-number.swift)|
+|1540|[can-convert-string-in-k-moves.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/1540_can-convert-string-in-k-moves.swift)|
 
 ## Array
 
@@ -366,6 +370,17 @@
 |1464|[maximum-product-of-two-elements-in-an-array.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1464_maximum-product-of-two-elements-in-an-array.swift)|
 |1465|[maximum-area-of-a-piece-of-cake-after-horizontal-and-vertical-cuts.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1465_maximum-area-of-a-piece-of-cake-after-horizontal-and-vertical-cuts.swift)|
 |1470|[shuffle-the-array.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1470_shuffle-the-array.swift)|
+|1475|[final-prices-with-a-special-discount-in-a-shop.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1475_final-prices-with-a-special-discount-in-a-shop.swift)|
+|1480|[running-sum-of-1d-array.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1480_running-sum-of-1d-array.swift)|
+|1481|[least-number-of-unique-integers-after-k-removals.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1481_least-number-of-unique-integers-after-k-removals.swift)|
+|1491|[average-salary-excluding-the-minimum-and-maximum-salary.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1491_average-salary-excluding-the-minimum-and-maximum-salary.swift)|
+|1493|[longest-subarray-of-1s-after-deleting-one-element.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1493_longest-subarray-of-1s-after-deleting-one-element.swift)|
+|1508|[range-sum-of-sorted-subarray-sums.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1508_range-sum-of-sorted-subarray-sums.swift)|
+|1509|[minimum-difference-between-largest-and-smallest-value-in-three-moves.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1509_minimum-difference-between-largest-and-smallest-value-in-three-moves.swift)|
+|1512|[number-of-good-pairs.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1512_number-of-good-pairs.swift)|
+|1534|[count-good-triplets.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1534_count-good-triplets.swift)|
+|1535|[find-the-winner-of-an-array-game.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1535_find-the-winner-of-an-array-game.swift)|
+|1550|[three-consecutive-odds.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/1550_three-consecutive-odds.swift)|
 |5113|[RemoveInterval.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/5113_RemoveInterval.swift)|
 
 ## UnionFind
@@ -470,6 +485,9 @@
 |1292|[MaximumSideLengthOfSqureWithSumLessThanOrEqualToThreshold.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/1292_MaximumSideLengthOfSqureWithSumLessThanOrEqualToThreshold.swift)|
 |1300|[SumOfMutatedArrayClosestToTarget.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/1300_SumOfMutatedArrayClosestToTarget.swift)|
 |1343|[NumberOfSub-arraysOfSizeKAndAverageGraterThanOrEqualToThreshold.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/1343_NumberOfSub-arraysOfSizeKAndAverageGraterThanOrEqualToThreshold.swift)|
+|1482|[minimum-number-of-days-to-make-m-bouquets.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/1482_minimum-number-of-days-to-make-m-bouquets.swift)|
+|1498|[number-of-subsequences-that-satisfy-the-given-sum-condition.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/1498_number-of-subsequences-that-satisfy-the-given-sum-condition.swift)|
+|1552|[magnetic-force-between-two-balls.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/1552_magnetic-force-between-two-balls.swift)|
 
 ## Graph
 
@@ -492,6 +510,7 @@
 |1387|[SortIntegersByThePowerValue.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/1387_SortIntegersByThePowerValue.swift)|
 |1462|[course-schedule-iv.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/1462_course-schedule-iv.swift)|
 |1466|[reorder-routes-to-make-all-paths-lead-to-the-city-zero.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/1466_reorder-routes-to-make-all-paths-lead-to-the-city-zero.swift)|
+|1514|[path-with-maximum-probability.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/1514_path-with-maximum-probability.swift)|
 
 ## Math
 
@@ -507,6 +526,7 @@
 |223|[RectangleArea.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/223_RectangleArea.swift)|
 |224|[BasicCalculator.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/224_BasicCalculator.swift)|
 |231|[PowerOfTwo.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/231_PowerOfTwo.swift)|
+|233|[number-of-digit-one.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/233_number-of-digit-one.swift)|
 |258|[AddDigits.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/258_AddDigits.swift)|
 |263|[UglyNumber.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/263_UglyNumber.swift)|
 |264|[UglyNumberII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/264_UglyNumberII.swift)|
@@ -566,6 +586,7 @@
 |1131|[MaximumOfAbsoluteValueExpression.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1131_MaximumOfAbsoluteValueExpression.swift)|
 |1154|[DayOfTheYear.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1154_DayOfTheYear.swift)|
 |1218|[LongestArithmeticSubsequenceOfGivenDifference.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1218_LongestArithmeticSubsequenceOfGivenDifference.swift)|
+|1250|[check-if-it-is-a-good-array.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1250_check-if-it-is-a-good-array.swift)|
 |1276|[NumberOfBurgersWithNoWasteOfIngredients.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1276_NumberOfBurgersWithNoWasteOfIngredients.swift)|
 |1281|[SubtractTheProductAndSumOfDigitsOfAnInteger.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1281_SubtractTheProductAndSumOfDigitsOfAnInteger.swift)|
 |1317|[ConvertIntegerToTheSumOfTwoNo-zeroIntegers.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1317_ConvertIntegerToTheSumOfTwoNo-zeroIntegers.swift)|
@@ -580,6 +601,11 @@
 |1401|[CircleAndRectangleOverlapping.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1401_CircleAndRectangleOverlapping.swift)|
 |1447|[SimplifiedFractions.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1447_SimplifiedFractions.swift)|
 |1453|[MaximumNumberOfDartsInsideOfACircularDartboard.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1453_MaximumNumberOfDartsInsideOfACircularDartboard.swift)|
+|1492|[the-kth-factor-of-n.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1492_the-kth-factor-of-n.swift)|
+|1497|[check-if-array-pairs-are-divisible-by-k.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1497_check-if-array-pairs-are-divisible-by-k.swift)|
+|1523|[count-odd-numbers-in-an-interval-range.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1523_count-odd-numbers-in-an-interval-range.swift)|
+|1524|[number-of-sub-arrays-with-odd-sum.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1524_number-of-sub-arrays-with-odd-sum.swift)|
+|1551|[minimum-operations-to-make-array-equal.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/1551_minimum-operations-to-make-array-equal.swift)|
 
 ## Trie
 
@@ -645,6 +671,7 @@
 |1400|[ConstructKPalindromeStrings.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/1400_ConstructKPalindromeStrings.swift)|
 |1405|[LongestHappyString.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/1405_LongestHappyString.swift)|
 |1414|[FindTheMinimumNumberOfFibonacciNumbersWhoseSumIsK.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/1414_FindTheMinimumNumberOfFibonacciNumbersWhoseSumIsK.swift)|
+|1518|[water-bottles.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/1518_water-bottles.swift)|
 
 ## String
 
@@ -699,6 +726,7 @@
 |541|[ReverseString.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/541_ReverseString.swift)|
 |551|[StudentAttendenceRecord.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/551_StudentAttendenceRecord.swift)|
 |553|[OptimalDivision.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/553_OptimalDivision.swift)|
+|555|[split-concatenated-strings.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/555_split-concatenated-strings.swift)|
 |556|[NextGreaterElement.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/556_NextGreaterElement.swift)|
 |557|[ReverseWordInString.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/557_ReverseWordInString.swift)|
 |567|[PermutationInString.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/567_PermutationInString.swift)|
@@ -771,6 +799,15 @@
 |1455|[CheckIfAWordOccursAsAPrefixOfAnyWordInaSentence.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1455_CheckIfAWordOccursAsAPrefixOfAnyWordInaSentence.swift)|
 |1456|[MaximumNumberOfVowelsInASubstringOfGivenLength.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1456_MaximumNumberOfVowelsInASubstringOfGivenLength.swift)|
 |1461|[check-if-a-string-contains-all-binary-codes-of-size-k.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1461_check-if-a-string-contains-all-binary-codes-of-size-k.swift)|
+|1496|[path-crossing.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1496_path-crossing.swift)|
+|1507|[reformat-date.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1507_reformat-date.swift)|
+|1513|[number-of-substrings-with-only-1s.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1513_number-of-substrings-with-only-1s.swift)|
+|1525|[number-of-good-ways-to-split-a-string.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1525_number-of-good-ways-to-split-a-string.swift)|
+|1528|[shuffle-string.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1528_shuffle-string.swift)|
+|1529|[bulb-switcher-iv.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1529_bulb-switcher-iv.swift)|
+|1541|[minimum-insertions-to-balance-a-parentheses-string.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1541_minimum-insertions-to-balance-a-parentheses-string.swift)|
+|1544|[make-the-string-great.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1544_make-the-string-great.swift)|
+|1545|[find-kth-bit-in-nth-binary-string.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/1545_find-kth-bit-in-nth-binary-string.swift)|
 
 ## Stack
 
@@ -784,6 +821,7 @@
 |331|[VerifyPreorderSerializationOfABinaryTree.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/331_VerifyPreorderSerializationOfABinaryTree.swift)|
 |341|[FlatternNestedListIterator.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/341_FlatternNestedListIterator.swift)|
 |394|[DecodeString.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/394_DecodeString.swift)|
+|439|[ternary-expression-parser.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/439_ternary-expression-parser.swift)|
 |456|[132Pattern.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/456_132Pattern.swift)|
 |496|[NextGreaterElement.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/496_NextGreaterElement.swift)|
 |503|[NextGreaterElement.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Stack/503_NextGreaterElement.swift)|
@@ -816,6 +854,7 @@
 |72|[EditDistance.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/72_EditDistance.swift)|
 |87|[ScrambleString.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/87_ScrambleString.swift)|
 |91|[DecodeWays.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/91_DecodeWays.swift)|
+|97|[interleaving-string.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/97_interleaving-string.swift)|
 |120|[Triangle.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/120_Triangle.swift)|
 |121|[BestTimeOfBuyAndSellStock.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/121_BestTimeOfBuyAndSellStock.swift)|
 |122|[Stock2.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/122_Stock2.swift)|
@@ -885,10 +924,16 @@
 |1223|[DiceRollSimulation.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1223_DiceRollSimulation.swift)|
 |1277|[CounterSqureSubmatricesWithAllOnes.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1277_CounterSqureSubmatricesWithAllOnes.swift)|
 |1289|[MinimumFallingPathSumII.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1289_MinimumFallingPathSumII.swift)|
+|1301|[number-of-paths-with-max-score.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1301_number-of-paths-with-max-score.swift)|
 |1312|[MinimumInsertationStepsToMakeAStringPalindrome.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1312_MinimumInsertationStepsToMakeAStringPalindrome.swift)|
 |1326|[MinimuNumberOfTapsToOpenToWaterAGarden.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1326_MinimuNumberOfTapsToOpenToWaterAGarden.swift)|
 |1458|[MaxDotProductOfTwoSubsequences.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1458_MaxDotProductOfTwoSubsequences.swift)|
 |1473|[paint-house-iii.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1473_paint-house-iii.swift)|
+|1477|[find-two-non-overlapping-sub-arrays-each-with-target-sum.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1477_find-two-non-overlapping-sub-arrays-each-with-target-sum.swift)|
+|1510|[stone-game-iv.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1510_stone-game-iv.swift)|
+|1526|[minimum-number-of-increments-on-subarrays-to-form-a-target-array.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1526_minimum-number-of-increments-on-subarrays-to-form-a-target-array.swift)|
+|1537|[get-the-maximum-score.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1537_get-the-maximum-score.swift)|
+|1546|[maximum-number-of-non-overlapping-subarrays-with-sum-equals-target.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/1546_maximum-number-of-non-overlapping-subarrays-with-sum-equals-target.swift)|
 
 ## Contest
 
@@ -945,6 +990,7 @@
 |1310|[XORQueriesOfASubarray.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/1310_XORQueriesOfASubarray.swift)|
 |1356|[SortInregersByTheNumberOfOneBits.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/1356_SortInregersByTheNumberOfOneBits.swift)|
 |1442|[CountTripletsThatCanFormTwoArraysOfEqualXOR.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/1442_CountTripletsThatCanFormTwoArraysOfEqualXOR.swift)|
+|1542|[find-longest-awesome-substring.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/1542_find-longest-awesome-substring.swift)|
 
 ## BreadFirstSearch
 
@@ -974,6 +1020,7 @@
 |1036|[EscapeALargeMaze.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1036_EscapeALargeMaze.swift)|
 |1091|[ShortestPathInBinaryMartrix.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1091_ShortestPathInBinaryMartrix.swift)|
 |1162|[AsFarFromLandAsPossible.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1162_AsFarFromLandAsPossible.swift)|
+|1197|[minimum-knight-moves.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1197_minimum-knight-moves.swift)|
 |1210|[MinimumMovesToReachTargetWithRotations.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1210_MinimumMovesToReachTargetWithRotations.swift)|
 |1263|[MinimumMovesToMoveBoxToTheirTargetLocation.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1263_MinimumMovesToMoveBoxToTheirTargetLocation.swift)|
 |1284|[MinimumNumberOfFlipsToConvertBinaryMatrixToZeroMartrix.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1284_MinimumNumberOfFlipsToConvertBinaryMatrixToZeroMartrix.swift)|
@@ -982,6 +1029,7 @@
 |1311|[GetWatchedVideosByYourFriends.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1311_GetWatchedVideosByYourFriends.swift)|
 |1345|[JumpGameIV.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1345_JumpGameIV.swift)|
 |1368|[MinimumCostToMakeAtLeastOneValidPathInGrid.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1368_MinimumCostToMakeAtLeastOneValidPathInGrid.swift)|
+|1553|[minimum-number-of-days-to-eat-n-oranges.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BreadFirstSearch/1553_minimum-number-of-days-to-eat-n-oranges.swift)|
 
 ## DFS
 
@@ -1046,7 +1094,7 @@
 |11|[xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/11_xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof.swift)|
 |12|[ju-zhen-zhong-de-lu-jing-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/12_ju-zhen-zhong-de-lu-jing-lcof.swift)|
 |13|[ji-qi-ren-de-yun-dong-fan-wei-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/13_ji-qi-ren-de-yun-dong-fan-wei-lcof.swift)|
-|14|[jian-sheng-zi-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/14_jian-sheng-zi-lcof.swift)|
+|14|[jian-sheng-zi-ii-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/14_jian-sheng-zi-ii-lcof.swift)|
 |15|[er-jin-zhi-zhong-1de-ge-shu-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/15_er-jin-zhi-zhong-1de-ge-shu-lcof.swift)|
 |16|[shu-zhi-de-zheng-shu-ci-fang-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/16_shu-zhi-de-zheng-shu-ci-fang-lcof.swift)|
 |17|[da-yin-cong-1dao-zui-da-de-nwei-shu-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/17_da-yin-cong-1dao-zui-da-de-nwei-shu-lcof.swift)|
@@ -1066,6 +1114,7 @@
 |32|[cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/32_cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof.swift)|
 |33|[er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/33_er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof.swift)|
 |34|[er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/34_er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof.swift)|
+|35|[fu-za-lian-biao-de-fu-zhi-lcof.cpp](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/35_fu-za-lian-biao-de-fu-zhi-lcof.cpp)|
 |38|[zi-fu-chuan-de-pai-lie-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/38_zi-fu-chuan-de-pai-lie-lcof.swift)|
 |39|[shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/39_shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof.swift)|
 |40|[zui-xiao-de-kge-shu-lcof.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Offer/40_zui-xiao-de-kge-shu-lcof.swift)|
