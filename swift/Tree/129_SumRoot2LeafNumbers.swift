@@ -8,27 +8,21 @@ public class TreeNode {
         self.right = nil
     }
 }
-class Q129_Solution {
+class Solution {
     func sumNumbers(_ root: TreeNode?) -> Int {
         var sum = 0
-        var currentPathSum = 0
-        func dfs(_ root : TreeNode?) {
-            if nil == root {
+        func dfs(_ root : TreeNode?,_ pathSum: Int) {
+            guard let r = root else {
                 return
             }
-            currentPathSum = 10 * currentPathSum + (root?.val)!
-            if nil == root?.left && nil == root?.right {
+            let currentPathSum = 10 * pathSum + r.val
+            if nil == r.left && nil == r.right {
                 sum += currentPathSum
             }
-            if nil != root?.left {
-                dfs(root?.left)
-            }
-            if nil != root?.right {
-                dfs(root?.right)
-            }
-            currentPathSum = (currentPathSum - (root?.val)!) / 10
+            dfs(r.left, currentPathSum)
+            dfs(r.right,currentPathSum)
         }
-        dfs(root)
+        dfs(root, 0)
         return sum
     }
 }
