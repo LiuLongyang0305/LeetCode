@@ -28,15 +28,9 @@ class Solution {
             var idx: Int? = nil;
             for node in queue {
                 if let left = node.left {
-                    if left.val == u.val {
-                        idx = nextLevel.count
-                    }
                     nextLevel.append(left)
                 }
                 if let right = node.right {
-                    if right.val == u.val {
-                        idx = nextLevel.count
-                    }
                     nextLevel.append(right)
                 }
             }
