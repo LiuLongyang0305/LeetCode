@@ -21,13 +21,6 @@ class Solution {
             }
         }
         var ans = (-1,-1,-1)
-        func check(_ r: Int, _ c: Int, _ size: Int) -> Bool {
-            let low = r + size - 1
-            let right = c + size - 1
-            let ans =  rowsOnes[low][c] - (c + size >= N ? 0 : rowsOnes[low][c + size]) == size && colOnes[r][right] - (r + size >= N ? 0 : colOnes[r + size][right]) == size
-//            print("\(#function) r = \(r) c = \(c) size = \(size) ans = \(ans)")
-            return ans
-        }
         func getMaxSizeOf(_ r: Int, _ c: Int) -> Int {
             let maxSize = min(colOnes[r][c],rowsOnes[r][c])
 //            print("\(#function)  r = \(r)  c = \(c) max = \(maxSize)")
