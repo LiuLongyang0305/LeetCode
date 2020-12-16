@@ -2,7 +2,7 @@ import os
 
 path = "/Users/liulongyang/Documents/GitHub/LeetCode/swift"
 dir_names = ['Tree', 'Hash', 'Array', 'UnionFind', 'LinkedList', 'BinarySearch', 'Graph', 'Math', 'Trie', 'Heap',
-             'Greedy', 'String', 'Stack', 'DynamicProgramming', 'Contest','Backtracking','BitMapipulation','BreadFirstSearch','DFS','Sort','Offer']
+             'Greedy', 'String', 'Stack', 'DynamicProgramming', 'Contest','Backtracking','BitMapipulation','BreadFirstSearch','DFS','Sort','Offer','SlidingWindow']
 file_path = '/Users/liulongyang/Documents/GitHub/LeetCode/README.md'
 websites = 'https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/'
 with open(file_path, 'w') as read_me:
