@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-distinct-islands-ii/submissions/
+// https://leetcode.com/problems/number-of-distinct-islands-ii/
 class Solution {
     private typealias TransformFactor = (dx:Int,dy:Int)
     private let transformFactorsXY: [TransformFactor] = [(1,1),(-1,1),(1,-1),(-1,-1)]
