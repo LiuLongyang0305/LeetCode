@@ -62,3 +62,57 @@ extension Int  {
         return ans
     }
  }
+
+
+class TrieNode {
+    var left: TrieNode? = nil
+    var right: TrieNode? = nil
+}
+
+
+class Solution {
+    private let root = TrieNode()
+    func findMaximumXOR(_ nums: [Int]) -> Int {
+        let maxNumber = nums.max()!
+        let maxNumberBitLength = 64 - maxNumber.leadingZeroBitCount
+        var ans = 0
+        for num in nums {
+            var curNode: TrieNode = root
+            var curXORValue = 0
+            var xorNode: TrieNode = root
+            for bit in stride(from: maxNumberBitLength - 1, through: 0, by:  -1) {
+                
+                if num & (1 << bit) == 0 {
+                    if nil == curNode.left {
+                        curNode.left = TrieNode()
+                    }
+                    curNode = curNode.left!
+                    if let r = xorNode.right {
+                        curXORValue |= (1 << bit)
+                        xorNode = r
+                    } else {
+                        xorNode = xorNode.left!
+                    }
+                } else {
+                    if nil == curNode.right {
+                        curNode.right = TrieNode()
+                    }
+                    curNode = curNode.right!
+
+                    if let l = xorNode.left {
+                        curXORValue |= (1 << bit)
+                        xorNode = l
+                    } else {
+                        xorNode = xorNode.right!
+                    }
+                }
+            }
+            ans = max(ans, curXORValue)
+        }
+        return ans
+    }
+}
+
+
+
+
