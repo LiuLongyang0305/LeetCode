@@ -64,3 +64,37 @@ class Solution {
         return ans
     }
 }
+
+class Solution {
+    func longestOnes(_ A: [Int], _ K: Int) -> Int {
+        let N = A.count
+        var preffix = [0]
+        for num in A {
+            preffix.append( preffix.last! + (1 - num) )
+        }
+        guard K < preffix.last! else {
+            return N
+        }
+        
+        func binarySearch(_ target: Int) -> Int{
+            var low = 0
+            var high = N
+            while low < high {
+                let mid = low + (high - low) / 2
+                if preffix[mid] < target {
+                    low =  mid + 1
+                } else {
+                    high = mid
+                }
+            }
+            return low
+        }
+        var ans = 0
+        for endIdx in 0..<N {
+            let startIdx = binarySearch(preffix[endIdx + 1] - K)
+            ans = max(ans, endIdx - startIdx + 1)
+        }
+        return ans
+    }
+     
+}
