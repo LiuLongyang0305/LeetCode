@@ -1,39 +1,35 @@
 //https://leetcode.com/problems/degree-of-an-array/
 class Solution {
+    private typealias Info = (cnt:Int,l:Int,r:Int)
     func findShortestSubArray(_ nums: [Int]) -> Int {
-        let length = nums.count
-        guard nums.count > 2 else {
-            if 1 == length {
-                return 1
-            }
-            return nums[0] == nums[1] ? 2 : 1
+        guard nums.count > 1 else {
+            return nums.count
         }
-        var valueToIndex = Dictionary<Int,[Int]>()
-        for i in 0..<length {
-            if valueToIndex[nums[i]] == nil {
-                valueToIndex[nums[i]] = [Int]()
+        var map = [Int:Info]()
+        let N = nums.count
+        for idx in 0..<N {
+            let num = nums[idx]
+            guard var info = map[num] else {
+                map[num] = (1,idx,idx)
+                continue
             }
-            valueToIndex[nums[i]]?.append(i)
+            info.cnt += 1
+            info.r = idx
+            map[num] = info
         }
-        var targetKey = [Int]()
-        var maxCount = 0
-        for (value,indices) in valueToIndex {
-            let indicesCount = indices.count
-            if indicesCount == maxCount {
-                targetKey.append(value)
-            } else if indicesCount > maxCount {
-                targetKey = [value]
-                maxCount = indicesCount
+        var cnt = 0
+        for (_,info) in map {
+            if info.cnt > cnt {
+                cnt = info.cnt
             }
         }
-        if maxCount == 1 {
-            return 1
+        var ans = Int.max
+        for (_,info) in map {
+            guard info.cnt == cnt else {
+                continue
+            }
+            ans = min(ans, info.r - info.l + 1)
         }
-        var potential = [Int]()
-        for key in targetKey {
-            let indices = valueToIndex[key]!
-            potential.append(indices.max()! - indices.min()! + 1)
-        }
-        return potential.min()!
+        return ans
     }
 }
