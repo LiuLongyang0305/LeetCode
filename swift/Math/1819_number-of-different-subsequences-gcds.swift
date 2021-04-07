@@ -12,15 +12,15 @@ class Solution {
                 cnt += 1
                 continue
             }
-            var g = 0
+            var gcd = 0
             var b = i
             while b <= max  {
                 if numbers[b] {
-                    g =  __gcd(g, b)
+                    gcd =  __gcd(gcd, b)
                 }
                 b += i
             }
-            if g == i {
+            if gcd == i {
                 cnt += 1
             }
         }
