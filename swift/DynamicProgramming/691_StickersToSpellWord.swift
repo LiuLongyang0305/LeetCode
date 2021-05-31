@@ -126,3 +126,94 @@ class Solution {
         return res
     }
 }
+
+
+
+//Solution3
+typealias StringInfo = (counter: [Int], mask: Int)
+extension String {
+    var info: StringInfo {
+        var ans = [Int](repeating: 0, count: 26)
+        var mask = 0
+        for ch in self {
+            let idx = Int(ch.asciiValue! - 97)
+            ans[idx] += 1
+            mask |= (1 << idx)
+        }
+        return (ans,mask)
+    }
+    
+}
+class Solution {
+    private var memo = [[Int]:Int]()
+    private var stickerInfos = [StringInfo]()
+    func minStickers(_ stickers: [String], _ target: String) -> Int {
+        let targetInfo = target.info
+        var stickerInfos = [StringInfo]()
+        var totalMask = 0
+        for sticker in stickers {
+            var info = sticker.info
+            info.mask &= targetInfo.mask
+            guard info.mask != 0 else {
+                continue
+            }
+            for idx in 0...25 {
+                if info.mask & (1 << idx) == 0 {
+                    info.counter[idx] == 0
+                }
+            }
+            stickerInfos.append(info)
+            totalMask |= info.mask
+            
+        }
+        guard totalMask == targetInfo.mask else {
+            return -1
+        }
+        
+        self.memo = [:]
+        self.stickerInfos = stickerInfos
+        
+        return dfs(info: targetInfo )
+    }
+    
+    private func dfs(info: StringInfo) -> Int {
+        guard info.mask > 0 else {
+            return 0
+        }
+        guard nil == memo[info.counter] else {
+            return memo[info.counter]!
+        }
+        var cnt = Int.max
+        var targetMask = -1
+        for bit in 0...25 {
+            if info.mask & (1 << bit) != 0 {
+                targetMask = (1 << bit)
+                break
+            }
+        }
+        for (counter,mask) in self.stickerInfos {
+            guard mask & targetMask != 0 else {
+                continue
+            }
+            let temp = info.mask & mask
+            var curCounter = info.counter
+            for idx in 0...25 {
+                if temp & (1 << idx) != 0 {
+                    curCounter[idx] = max(0, info.counter[idx] - counter[idx])
+                }
+            }
+            var curMask = 0
+            for idx in 0...25 {
+                if curCounter[idx] > 0 {
+                    curMask |= (1 << idx)
+                }
+            }
+            let v = 1 + dfs(info: (curCounter,curMask))
+            if v < cnt {
+                cnt = v
+            }
+        }
+        memo[info.counter] = cnt
+        return cnt
+    }
+}
