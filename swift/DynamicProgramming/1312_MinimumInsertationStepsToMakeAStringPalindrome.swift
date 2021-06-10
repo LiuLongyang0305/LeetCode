@@ -38,3 +38,34 @@ class Solution {
         return dp[0][N - 1]
     }
  }
+
+
+ class Solution {
+    private var memo = [Int:Int]()
+    private var text = [Character]()
+    func minInsertions(_ s: String) -> Int {
+        self.memo = [:]
+        self.text = [Character](s)
+        return helper(0,s.count - 1)
+    }
+    func helper(_ left: Int, _ right: Int) -> Int {
+        guard right > left else {
+            return 0
+        }
+        guard right - left > 1 else {
+            return text[left] == text[right] ? 0 : 1
+        }
+        let key = left << 32 | right
+        guard nil == memo[key] else {
+            return memo[key]!
+        }
+        var ans = 0
+        if text[left] == text[right] {
+            ans = helper(left + 1, right - 1)
+        } else {
+            ans = 1 + min(helper(left + 1, right), helper(left, right - 1))
+        }
+        memo[key] = ans
+        return ans
+    }
+}
