@@ -1,60 +1,91 @@
 //https://leetcode.com/problems/valid-number/
 class Solution {
+    private let validCharactersSet = Set<Character>("+-Ee.")
     func isNumber(_ s: String) -> Bool {
-        var sCopy = s
-        while !sCopy.isEmpty  && sCopy.first! == " " {
-            sCopy.removeFirst()
-        }
-        while !sCopy.isEmpty  && sCopy.last! == " " {
-            sCopy.removeLast()
-        }
-        guard !sCopy.isEmpty else {
-            return  false
-        }
-        if sCopy.first!  == "-" || sCopy.first!  == "+" {
-            sCopy.removeFirst()
-        }
-        guard !sCopy.isEmpty else {
-            return  false
-        }
-        guard !sCopy.hasPrefix("-")  && !sCopy.hasPrefix("-") else {
+        guard !isInvalidcharacterExisted(s) else {
             return false
         }
-        if let index = sCopy.firstIndex(of: "e") {
-            let left = String(sCopy[sCopy.startIndex..<index])
-            let right = String(sCopy[sCopy.index(after: index)..<sCopy.endIndex ])
-            print("\(isInt(left))   \(isInt(right))")
-            return (isInt(left) || isDouble(left)) && isInt(right)
-        }
-
-        return isDouble(sCopy)  || isInt(sCopy)
-    }
-    private func  isInt(_ str: String)  -> Bool {
-        var sCopy = str
-        while sCopy.hasPrefix("0") {
-            sCopy.removeFirst()
-        }
-        return Int(str) != nil
-    }
-    private func isDouble(_ str: String)  -> Bool {
-
-        if str.hasPrefix(".") || str.hasSuffix("."){
-            var strCopy = str
-            if strCopy.hasPrefix(".") {
-            strCopy.removeFirst()
-            } else {
-                strCopy.removeLast()
-            }
-            guard !strCopy.hasPrefix("-") && !strCopy.hasPrefix("+") else {
+        if let idx = s.firstIndex(where: {$0 == "E" || $0 == "e"}) {
+            guard idx != s.startIndex && idx != s.index(before: s.endIndex) else {
                 return false
             }
-            return isInt(strCopy) ? Int(strCopy)! >= 0 : false
+            let left = String(s[..<idx])
+            let right = String(s[s.index(after: idx)...])
+            guard isInteger(left) || isFloat(left) else {
+                return false
+            }
+            return isInteger(right)
         }
+         
+        return s.contains(".") ?  isFloat(s) : isInteger(s)
         
-        if  let index  = str.firstIndex(of: "."){
-            let  rightStr = String(str[str.index(after: index)..<str.endIndex])
-            return isInt(String(str[str.startIndex..<index]))  && isInt(rightStr) && Int(rightStr)!  >= 0
+    }
+    private func isInteger(_ str: String) -> Bool {
+        guard !str.isEmpty else {
+            return false
         }
-        return  false
+        var num = str
+        if let f = num.first, f == "+" || f == "-" {
+            num.removeFirst()
+            guard !num.isEmpty else {
+                return false
+            }
+        }
+        for ch in num {
+            guard ch.isNumber else {
+                return false
+            }
+        }
+        return true
+    }
+    private func isFloat(_ str: String) -> Bool {
+        var floatNum = str
+        if let f = floatNum.first, f == "+" || f == "-" {
+            floatNum.removeFirst()
+        }
+        guard floatNum.count >= 2 else {
+            return false
+        }
+        guard let index = floatNum.firstIndex(of: ".") else {
+            return false
+        }
+        var idx = floatNum.startIndex
+        while idx < floatNum.endIndex {
+            if idx != index {
+                guard floatNum[idx].isNumber else {
+                    return false
+                }
+            }
+            idx = floatNum.index(after: idx)
+        }
+        return true
+    }
+    private func isInvalidcharacterExisted(_ str: String) -> Bool {
+        var counter  = [Character: Int]()
+        for ch in str {
+            guard ch.isNumber || validCharactersSet.contains(ch) else {
+                return true
+            }
+            if validCharactersSet.contains(ch) {
+                var key = ch
+                if ch == "E" {
+                    key  = "e"
+                } else if ch == "-" {
+                    key = "+"
+                }
+                counter[key,default: 0] += 1
+            }
+        }
+        guard (counter["+"] ?? 0) <= 2 else {
+            return true
+        }
+        guard (counter["e"] ?? 0) <= 1 else {
+            return true
+        }
+        guard (counter["."] ?? 0) <= 1 else {
+            return true
+        }
+        return false
     }
 }
+
