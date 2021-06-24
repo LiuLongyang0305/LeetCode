@@ -1,36 +1,40 @@
 // https://leetcode.com/problems/max-points-on-a-line/
 class Solution {
-    private struct Point: Hashable {
+    private struct Point {
         var x: Int
         var y: Int
     }
-    func maxPoints(_ points: [[Int]]) -> Int {
-        guard points.count > 2 else {
-            return points.count
+    func maxPoints(_ ps: [[Int]]) -> Int {
+        guard ps.count > 2 else {
+            return ps.count
         }
-        var pointsCounter = [Point:Int]()
-        points.forEach {  pointsCounter[Point(x: $0[0], y: $0[1]), default: 0] += 1}
+        let points = ps.map {Point(x: $0[0], y: $0[1])}
+        let sortedPoints = points.sorted { p1, p2 in
+            p1.x == p2.x ? (p1.y < p2.y) : (p1.x < p2.x)
+        }
         var ans = Int.min
-        let uniquePoints = Array<Point>(pointsCounter.keys)
-        let N = uniquePoints.count
-        guard N > 1 else {
-            return points.count
-        }
-        for i in 0..<(N - 1) {
-            for j in (i + 1)..<N {
-                var cnt = pointsCounter[uniquePoints[i]]! + pointsCounter[uniquePoints[j]]!
-                var k = j + 1
-                while k < N {
-                    let v1 = (uniquePoints[i].x - uniquePoints[j].x,uniquePoints[i].y - uniquePoints[j].y)
-                    let v2 = (uniquePoints[i].x - uniquePoints[k].x,uniquePoints[i].y - uniquePoints[k].y)
-                    if v1.0 * v2.1 == v1.1 * v2.0 {
-                        cnt += pointsCounter[uniquePoints[k]]!
+        let N = points.count
+        for startIdx in 0..<N {
+            let startPoint = sortedPoints[startIdx]
+            var endIdx = startIdx + 1
+            while endIdx < N {
+                
+                var pointsCount = 2
+
+                let dx = sortedPoints[endIdx].x - startPoint.x
+                let dy = sortedPoints[endIdx].y - startPoint.y
+                var idx = endIdx + 1
+                while idx < N {
+                    if (sortedPoints[idx].x - startPoint.x) * dy == (sortedPoints[idx].y - startPoint.y) * dx {
+                        pointsCount += 1
                     }
-                    k += 1
+                    idx += 1
                 }
-                ans = max(ans,cnt)
+                ans = max(ans, pointsCount)
+                endIdx += 1
             }
         }
         return ans
     }
 }
+
