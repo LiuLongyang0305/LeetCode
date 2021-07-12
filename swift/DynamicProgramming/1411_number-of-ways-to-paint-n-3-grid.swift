@@ -26,9 +26,7 @@ class Solution {
             }
             lastRow = curRow
         }
-        return lastRow.values.reduce(0) { ($0 + $1) % MOD
-            
-        }
+        return lastRow.values.reduce(0) { ($0 + $1) % MOD }
     }
     
     private func getPossibleStates(_ n: Int) -> [String] {
