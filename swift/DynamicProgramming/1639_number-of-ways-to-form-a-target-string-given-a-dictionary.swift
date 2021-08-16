@@ -5,6 +5,7 @@ extension Int {
     }
 }
 
+
 class Solution {
     func numWays(_ words: [String], _ target: String) -> Int {
         let N = target.count
