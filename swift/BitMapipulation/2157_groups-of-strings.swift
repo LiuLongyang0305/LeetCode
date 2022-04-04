@@ -40,10 +40,8 @@ class Solution {
 
             while !queue.isEmpty {
                 let curMask = queue.removeFirst()
-
                 for adj in getAdjacentMasks(of: curMask) {
                     guard let c1 = equivalenceWords[adj], !visited.contains(adj) else {continue}
-
                     total += c1
                     visited.insert(adj)
                     queue.append(adj)
