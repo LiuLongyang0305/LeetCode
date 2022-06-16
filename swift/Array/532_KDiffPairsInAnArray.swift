@@ -1,34 +1,20 @@
 //https://leetcode.com/problems/k-diff-pairs-in-an-array/
 class Solution {
     func findPairs(_ nums: [Int], _ k: Int) -> Int {
-        guard k >= 0 else {
-            return 0
-        }
-        var set = Set<Int>()
-        var existed = Set<Int>()
-        var count = 0
-        for ele in nums {
-            if k != 0 {
-                if !set.contains(ele) {
-                    if set.contains(ele + k) {
-                        count +=  1
-                    }
-                    if set.contains(ele - k) {
-                        count += 1
-                    }
-                    set.insert(ele)
+        var ans = 0
+        var counter = [Int:Int]()
+        nums.forEach { counter[$0,default: 0] += 1 }
+        for (num,cnt) in counter {
+            if k == 0 {
+                if cnt > 1 {
+                    ans += 1
                 }
             } else {
-                if set.contains(ele) {
-                    count += 1
-                    set.remove(ele)
-                    existed.insert(ele)
-                }
-                if !existed.contains(ele) {
-                    set.insert(ele)
+                if let _ = counter[num + k] {
+                    ans += 1
                 }
             }
         }
-        return count
+        return ans
     }
 }
