@@ -1,39 +1,41 @@
 //https://leetcode.com/problems/find-largest-value-in-each-tree-row/
-public class TreeNode {
-    public var val: Int
-    public var left: TreeNode?
-    public var right: TreeNode?
-    public init(_ val: Int) {
-        self.val = val
-        self.left = nil
-        self.right = nil
-    }
-}
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public var val: Int
+ *     public var left: TreeNode?
+ *     public var right: TreeNode?
+ *     public init() { self.val = 0; self.left = nil; self.right = nil; }
+ *     public init(_ val: Int) { self.val = val; self.left = nil; self.right = nil; }
+ *     public init(_ val: Int, _ left: TreeNode?, _ right: TreeNode?) {
+ *         self.val = val
+ *         self.left = left
+ *         self.right = right
+ *     }
+ * }
+ */
 class Solution {
     func largestValues(_ root: TreeNode?) -> [Int] {
-        var result = [Int]()
-        guard nil != root else {
-            return result
-        }
-        var queue = [TreeNode?]()
-        queue.append(root)
+        guard let r = root else {return []}
+        var  ans = [Int]()
+        var queue = [TreeNode]()
+        queue.append(r)
+
         while !queue.isEmpty {
-            let levelSize = queue.count
-            var max: Int = queue[0]!.val
-            for _ in 0..<levelSize {
-                let node = queue.removeFirst()
-                if node!.val > max {
-                    max = node!.val
+            var newleveL = [TreeNode]()
+            var maxVal = Int.min
+            for node in queue {
+                maxVal = max(maxVal, node.val)
+                if let l = node.left {
+                    newleveL.append(l)
                 }
-                if nil != node?.left {
-                    queue.append(node?.left)
-                }
-                if nil != node?.right {
-                    queue.append(node?.right)
+                if let r = node.right {
+                    newleveL.append(r)
                 }
             }
-            result.append(max)
+            ans.append(maxVal)
+            queue = newleveL
         }
-        return result
+        return ans
     }
 }
