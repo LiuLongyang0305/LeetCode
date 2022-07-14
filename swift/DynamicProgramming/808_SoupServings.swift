@@ -25,3 +25,30 @@ class Solution {
         return probability[soupVolume][soupVolume]
     }
  }
+
+
+
+ class Solution {
+    private let err = 1e-7
+    func soupServings(_ n: Int) -> Double {
+
+        guard n <= 4450 else {return 1.0}
+        let N = Int(ceil(Double(n) / 25.0))
+        var memo = [Int:Double]()
+        func dfs(_ soupA:Int, _ soupB:Int) -> Double {
+            guard soupA > 0 else {
+                return soupB == 0 ? 0.5 : 1.0
+            }
+            guard soupB > 0 else {return 0}
+            let key = soupA << 30 | soupB
+            if let v = memo[key] {
+                return v
+            }
+            let ans = 0.25 * (dfs(max(soupA - 4,0), soupB) + dfs(max(soupA - 3,0), max(soupB - 1,0)) + dfs(max(soupA - 2,0), max(soupB - 2,0)) + dfs(max(soupA - 1,0), max(soupB - 3,0)))
+            memo[key] = ans
+            return ans
+        }
+
+        return dfs(N, N)
+    }
+}
