@@ -22,3 +22,28 @@ class Solution {
         return res
     }
 }
+
+class Solution {
+    func new21Game(_ n: Int, _ k: Int, _ maxPts: Int) -> Double {
+        guard k > 0 else {
+            return 1.0
+        }
+        let unit = 1.0 / Double(maxPts)
+        var memo = [Int:Double]()
+        func dfs(_ start:Int) -> Double {
+            guard start != k - 1 else {
+                return Double(min(n - k + 1, maxPts)) * unit
+            }
+            guard start < k else {return start <= n ? 1 : 0}
+            if let v = memo[start] {
+                return v
+            }
+            let next = dfs(start + 1)
+            let ans = next + unit * (next - dfs(start + maxPts + 1))
+            memo[start] = ans
+            return ans
+
+        }
+        return dfs(0)
+    }
+}
