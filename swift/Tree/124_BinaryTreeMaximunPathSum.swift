@@ -11,23 +11,22 @@ class TreeNode {
 }
 
 class Solution {
-    var maxSum: Int = Int.min
-    private func maxSumAtRoot(root: TreeNode?) -> Int {
-   
-        if nil == root {
-            return 0
-        }
-        
-        let maxLeft = max(0, maxSumAtRoot(root: root?.left))
-        let maxRight = max(0, maxSumAtRoot(root: root?.right))
-        
-        let val = root!.val
-        let maxAtRoot = val + max(maxRight, maxLeft)
-        maxSum = max(maxSum, val + maxRight + maxLeft)
-        return maxAtRoot
-    }
     func maxPathSum(_ root: TreeNode?) -> Int {
-        maxSumAtRoot(root: root)
-        return maxSum
+        var ans = Int.min
+
+
+        func dfs(_ node: TreeNode?) -> Int {
+
+            guard let n = node else {
+                return 0
+            }
+
+            let l = max(0,dfs(n.left))
+            let r = max(0,dfs(n.right))
+            ans = max(ans, n.val + l + r)
+            return n.val + max(l,r)
+        }
+        dfs(root)
+        return ans
     }
 }
