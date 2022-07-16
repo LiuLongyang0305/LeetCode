@@ -34,32 +34,32 @@ class Solution {
 }
 
 //This solution works well.
-class Solution2 {
-    typealias RobbedResult = (notRobbed: Int,robbed: Int)
-    func dfs(root: TreeNode?) -> RobbedResult {
-        var result: RobbedResult = (0,0)
-        guard nil != root else {
-            return result
+class Solution {
+    private typealias Pair = (notBeRobbed:Int,robbed:Int)
+    func rob(_ root: TreeNode?) -> Int {
+
+        func  dfs(_ node: TreeNode?) -> Pair {
+
+            guard let node = node else {
+                return (0,0)
+            }
+
+            var ans: Pair = (0,0)
+            ans.robbed += node.val
+            if let l = node.left {
+                let leftAns = dfs(l)
+                ans.notBeRobbed += max(leftAns.notBeRobbed, leftAns.robbed)
+                ans.robbed += leftAns.notBeRobbed
+            }
+            if let r = node.right {
+                let rightAns = dfs(r)
+                ans.notBeRobbed += max(rightAns.notBeRobbed, rightAns.robbed)
+                ans.robbed += rightAns.notBeRobbed
+            }
+            return ans
         }
 
-        result.robbed += root!.val
-        if nil != root?.left {
-            
-        }
-        if nil != root?.right {
-            let leftResult : RobbedResult = dfs(root: root?.left)
-            result.notRobbed += max(leftResult.notRobbed, leftResult.robbed)
-            result.robbed += leftResult.notRobbed
-        }
-        if nil != root?.right {
-            let rightResult: RobbedResult = dfs(root: root?.right)
-            result.notRobbed += max(rightResult.robbed, rightResult.notRobbed)
-            result.robbed += rightResult.notRobbed
-        }
-        return result
-    }
-    func rob(_ root: TreeNode?) -> Int {
-        let result = dfs(root: root)
-        return result.notRobbed > result.robbed ? result.notRobbed : result.robbed
+        let res = dfs(root)
+        return max(res.notBeRobbed,res.robbed)
     }
 }
