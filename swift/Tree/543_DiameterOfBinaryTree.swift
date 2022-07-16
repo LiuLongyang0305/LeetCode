@@ -48,3 +48,23 @@ class Q543_Solution {
         return diameter
     }
  }
+
+ class Solution {
+    func diameterOfBinaryTree(_ root: TreeNode?) -> Int {
+        var ans = Int.min
+
+
+        func dfs(_ node:TreeNode?) -> Int {
+            guard let node = node else {
+                return 0
+            }
+            let l = dfs(node.left)
+            let r = dfs(node.right)
+            ans = max(ans, l + r + 1)
+            return 1 + max(l, r)
+        }
+        let _ = dfs(root)
+        return ans - 1
+    }
+}
+
