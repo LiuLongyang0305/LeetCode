@@ -42,3 +42,38 @@ class Solution {
         return bfs(bfs(0).0).1 - 1
     }
 }
+
+
+class Solution {
+    func treeDiameter(_ edges: [[Int]]) -> Int {
+        let N = edges.count
+        var tree = [[Int]](repeating: [], count: N + 1)
+        for e in edges {
+            tree[e[0]].append(e[1])
+            tree[e[1]].append(e[0])
+        }
+        var ans = 0
+        @discardableResult
+        func dfs(_ cur: Int, _ parent: Int) -> Int {
+            var maxLength = 0
+            var secondMaxLength = 0
+
+            for v in tree[cur] {
+                guard v != parent else {continue}
+                let temp = dfs(v, cur) + 1
+                if temp > maxLength {
+                    secondMaxLength = maxLength
+                    maxLength = temp
+                } else if temp > secondMaxLength {
+                    secondMaxLength = temp
+                }
+            }
+
+//            print("\(maxLength)   \(secondMaxLength)")
+            ans = max(ans, maxLength + secondMaxLength)
+            return maxLength
+        }
+        dfs(0, -1)
+        return ans
+    }
+}
