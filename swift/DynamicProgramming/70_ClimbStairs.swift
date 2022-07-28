@@ -14,3 +14,25 @@ class Q70_Solution {
         }
     }
 }
+
+class Solution {
+    func climbStairs(_ n: Int) -> Int {
+        var memo = [Int](repeating: -1, count: n + 5)
+        func dfs(_ stairs: Int) -> Int {
+            if 1 == stairs {
+                return 1
+            }
+            if 2 == stairs {
+                return 2
+            }
+            guard -1 == memo[stairs] else {
+                return memo[stairs]
+            }
+
+            let ans = dfs(stairs - 1) + dfs(stairs - 2)
+            memo[stairs] = ans
+            return ans
+        }
+        return dfs(n)
+    }
+}
