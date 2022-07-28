@@ -1,23 +1,33 @@
 //https://leetcode.com/problems/handshakes-that-dont-cross/
-extension Int {
-    static var mod: Int {
-        return 1_000_000_007
-    }
-}
-
 class Solution {
 
-    func numberOfWays(_ num_people: Int) -> Int {
-        let m = num_people >> 1
-        var dp = Array<Int>(repeating: 0, count: m + 1)
-        dp[0] = 1
-        for i in 1...m {
-            var temp = 0
-            for j in 0..<i {
-                temp = (temp + dp[j] * dp[i - 1 - j]) % Int.mod
+    private let MOD = 1_000_000_007
+    func numberOfWays(_ numPeople: Int) -> Int {
+
+        var memo = [Int](repeating: -1, count: numPeople + 5)
+        func dfs(_ cnt: Int) -> Int {
+
+            guard cnt % 2 == 0 else {
+                return 0
             }
-            dp[i] = temp
+
+            if cnt == 2 || cnt == 0 {
+                return 1
+            }
+
+            guard -1 == memo[cnt] else {return memo[cnt]}
+            var ans = 0
+
+            for j in 2...cnt {
+                ans += dfs(j - 2) * dfs(cnt - j)
+                ans %= MOD
+            }
+
+            memo[cnt] = ans
+            return ans
         }
-        return dp[m]
+
+
+        return dfs(numPeople)
     }
 }
