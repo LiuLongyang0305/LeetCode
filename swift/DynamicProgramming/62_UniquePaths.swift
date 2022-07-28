@@ -1,42 +1,28 @@
 //https://leetcode.com/problems/unique-paths/
 
-//Permutation and Combination
 class Solution {
     func uniquePaths(_ m: Int, _ n: Int) -> Int {
-        if m == 0 || n == 0 {
-            return 0
-        }
-        if n == 1 || m == 1 {
-            return 1
-        }
+        var memo = [[Int?]](repeating: [Int?](repeating: nil, count: n), count: m)
 
-        let totalSteps = m - 1 + n - 1
-        var totalStepsSet = Set<Int>(1...totalSteps)
-        var p1 = Set<Int>(1...(m - 1))
-        var p2 = Set<Int>(1...(n - 1))
-        for ele in p1 {
-            if totalStepsSet.contains(ele) {
-                totalStepsSet.remove(ele)
-                p1.remove(ele)
+        func dfs(_ x: Int, _ y: Int) -> Int {
+            guard x != m - 1 || y != n - 1 else {
+                return 1
             }
-        }
-        for ele in p2 {
-            if totalStepsSet.contains(ele) {
-                totalStepsSet.remove(ele)
-                p2.remove(ele)
+
+            guard  !(x < 0 || x >= m || y < 0 || y >= n) else {
+                return 0
             }
+            if let v = memo[x][y] {
+                return v
+            }
+            var ans = 0
+            for (dx,dy) in [(1,0),(0,1)] {
+                ans += dfs(x + dx, y + dy)
+            }
+            memo[x][y] = ans
+            return ans
         }
-        var ans = 1
-        for ele in totalStepsSet {
-            ans *= ele
-        }
-        var devident = 1
-        for ele in p1 {
-            devident *= ele
-        }
-        for ele in p2 {
-            devident *= ele
-        }
-        return ans / devident
+        
+        return dfs(0, 0)
     }
 }
