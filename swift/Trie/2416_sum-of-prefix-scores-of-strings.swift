@@ -49,3 +49,35 @@ class Solution {
         return ans
     }
 }
+
+
+class Solution {
+    func sumPrefixScores(_ words: [String]) -> [Int] {
+        let wordsPreffixes = words.map { getPreffix(of: $0)}
+        var counter = [Int:Int]()
+        for preffixes in wordsPreffixes {
+            for p in preffixes {
+                counter[p,default: 0] += 1
+            }
+        }
+        var ans = [Int]()
+        for preffixes in wordsPreffixes {
+            var cur = 0
+            for p in preffixes {
+                cur += (counter[p] ?? 0)
+            }
+            ans.append(cur)
+        }
+        return ans
+    }
+
+    private func getPreffix(of str: String) -> [Int] {
+        var ans = [Int]()
+        var preffix = ""
+        for ch in str {
+            preffix.append(ch)
+            ans.append(preffix.hashValue)
+        }
+        return ans
+    }
+}
