@@ -155,6 +155,10 @@
 |2265|[count-nodes-equal-to-average-of-subtree.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/2265_count-nodes-equal-to-average-of-subtree.swift)|
 |2322|[minimum-score-after-removals-on-a-tree.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/2322_minimum-score-after-removals-on-a-tree.swift)|
 |2331|[evaluate-boolean-binary-tree.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/2331_evaluate-boolean-binary-tree.swift)|
+|2367|[reachable-nodes-with-restrictions.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/2367_reachable-nodes-with-restrictions.swift)|
+|2385|[amount-of-time-for-binary-tree-to-be-infected.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/2385_amount-of-time-for-binary-tree-to-be-infected.swift)|
+|2415|[reverse-odd-levels-of-binary-tree.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/2415_reverse-odd-levels-of-binary-tree.swift)|
+|2426|[number-of-pairs-satisfying-inequality.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Tree/2426_number-of-pairs-satisfying-inequality.swift)|
 
 ## Hash
 
@@ -248,6 +252,7 @@
 |2306|[naming-a-company.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/2306_naming-a-company.swift)|
 |2351|[first-letter-to-appear-twice.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/2351_first-letter-to-appear-twice.swift)|
 |2364|[count-number-of-bad-pairs.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/2364_count-number-of-bad-pairs.swift)|
+|2395|[find-subarrays-with-equal-sum.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Hash/2395_find-subarrays-with-equal-sum.swift)|
 
 ## Array
 
@@ -564,6 +569,13 @@
 |2347|[best-poker-hand.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/2347_best-poker-hand.swift)|
 |2348|[number-of-zero-filled-subarrays.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/2348_number-of-zero-filled-subarrays.swift)|
 |2363|[merge-similar-items.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/2363_merge-similar-items.swift)|
+|2367|[number-of-arithmetic-triplets.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/2367_number-of-arithmetic-triplets.swift)|
+|2373|[largest-local-values-in-a-matrix.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/2373_largest-local-values-in-a-matrix.swift)|
+|2379|[minimum-recolors-to-get-k-consecutive-black-blocks.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/2379_minimum-recolors-to-get-k-consecutive-black-blocks.swift)|
+|2383|[minimum-hours-of-training-to-win-a-competition.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/2383_minimum-hours-of-training-to-win-a-competition.swift)|
+|2404|[most-frequent-even-element.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/2404_most-frequent-even-element.swift)|
+|2420|[find-all-good-indices.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/2420_find-all-good-indices.swift)|
+|2428|[maximum-sum-of-an-hourglass.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/2428_maximum-sum-of-an-hourglass.swift)|
 |5113|[RemoveInterval.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/5113_RemoveInterval.swift)|
 |5818|[longest-common-subsequence-between-sorted-arrays.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/5818_longest-common-subsequence-between-sorted-arrays.swift)|
 |5897|[partition-array-into-two-arrays-to-minimize-sum-difference.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Array/5897_partition-array-into-two-arrays-to-minimize-sum-difference.swift)|
@@ -604,6 +616,7 @@
 |1998|[gcd-sort-of-an-array.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/UnionFind/1998_gcd-sort-of-an-array.swift)|
 |2076|[process-restricted-friend-requests.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/UnionFind/2076_process-restricted-friend-requests.swift)|
 |2158|[amount-of-new-area-painted-each-day.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/UnionFind/2158_amount-of-new-area-painted-each-day.swift)|
+|2421|[number-of-good-paths.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/UnionFind/2421_number-of-good-paths.swift)|
 |10000|[UnionFind.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/UnionFind/10000_UnionFind.swift)|
 
 ## LinkedList
@@ -741,6 +754,7 @@
 |2251|[number-of-flowers-in-full-bloom.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/2251_number-of-flowers-in-full-bloom.swift)|
 |2300|[successful-pairs-of-spells-and-potions.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/2300_successful-pairs-of-spells-and-potions.swift)|
 |2332|[the-latest-time-to-catch-a-bus.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/2332_the-latest-time-to-catch-a-bus.swift)|
+|2398|[maximum-number-of-robots-within-budget.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BinarySearch/2398_maximum-number-of-robots-within-budget.swift)|
 
 ## Graph
 
@@ -785,6 +799,7 @@
 |2225|[find-players-with-zero-or-one-losses.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/2225_find-players-with-zero-or-one-losses.swift)|
 |2316|[count-unreachable-pairs-of-nodes-in-an-undirected-graph.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/2316_count-unreachable-pairs-of-nodes-in-an-undirected-graph.swift)|
 |2360|[longest-cycle-in-a-graph.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/2360_longest-cycle-in-a-graph.swift)|
+|2374|[node-with-highest-edge-score.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/2374_node-with-highest-edge-score.swift)|
 |9106|[isBipartite.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Graph/9106_isBipartite.swift)|
 
 ## Math
@@ -919,6 +934,7 @@
 |2110|[number-of-smooth-descent-periods-of-a-stock.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2110_number-of-smooth-descent-periods-of-a-stock.swift)|
 |2117|[abbreviating-the-product-of-a-range.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2117_abbreviating-the-product-of-a-range.swift)|
 |2119|[a-number-after-a-double-reversal.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2119_a-number-after-a-double-reversal.swift)|
+|2143|[smallest-even-multiple.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2143_smallest-even-multiple.swift)|
 |2160|[minimum-sum-of-four-digit-number-after-splitting-digits.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2160_minimum-sum-of-four-digit-number-after-splitting-digits.swift)|
 |2162|[minimum-cost-to-set-cooking-time.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2162_minimum-cost-to-set-cooking-time.swift)|
 |2165|[smallest-value-of-the-rearranged-number.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2165_smallest-value-of-the-rearranged-number.swift)|
@@ -937,6 +953,8 @@
 |2344|[minimum-deletions-to-make-array-divisible.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2344_minimum-deletions-to-make-array-divisible.swift)|
 |2354|[number-of-excellent-pairs.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2354_number-of-excellent-pairs.swift)|
 |2358|[.maximum-number-of-groups-entering-a-competitionswift.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2358_.maximum-number-of-groups-entering-a-competitionswift.swift)|
+|2396|[strictly-palindromic-number.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2396_strictly-palindromic-number.swift)|
+|2427|[number-of-common-factors.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Math/2427_number-of-common-factors.swift)|
 
 ## Trie
 
@@ -948,6 +966,7 @@
 |720|[LongestWord.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Trie/720_LongestWord.swift)|
 |1268|[SearchSuggestionsSyatem.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Trie/1268_SearchSuggestionsSyatem.swift)|
 |1707|[maximum-xor-with-an-element-from-array.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Trie/1707_maximum-xor-with-an-element-from-array.swift)|
+|2416|[sum-of-prefix-scores-of-strings.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Trie/2416_sum-of-prefix-scores-of-strings.swift)|
 
 ## Heap
 
@@ -981,6 +1000,8 @@
 |2208|[minimum-operations-to-halve-array-sum.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Heap/2208_minimum-operations-to-halve-array-sum.swift)|
 |2233|[maximum-product-after-k-increments.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Heap/2233_maximum-product-after-k-increments.swift)|
 |2290|[minimum-obstacle-removal-to-reach-corner.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Heap/2290_minimum-obstacle-removal-to-reach-corner.swift)|
+|2402|[meeting-rooms-iii.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Heap/2402_meeting-rooms-iii.swift)|
+|2406|[divide-intervals-into-minimum-number-of-groups.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Heap/2406_divide-intervals-into-minimum-number-of-groups.swift)|
 
 ## Greedy
 
@@ -1120,6 +1141,8 @@
 |2352|[equal-row-and-column-pairs.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/2352_equal-row-and-column-pairs.swift)|
 |2365|[task-scheduler-ii.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/2365_task-scheduler-ii.swift)|
 |2366|[minimum-replacements-to-sort-the-array.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/2366_minimum-replacements-to-sort-the-array.swift)|
+|2375|[construct-smallest-number-from-di-string.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/2375_construct-smallest-number-from-di-string.swift)|
+|2410|[maximum-matching-of-players-with-trainers.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Greedy/2410_maximum-matching-of-players-with-trainers.swift)|
 
 ## String
 
@@ -1358,6 +1381,11 @@
 |2325|[decode-the-message.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/2325_decode-the-message.swift)|
 |2337|[move-pieces-to-obtain-a-string.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/2337_move-pieces-to-obtain-a-string.swift)|
 |2343|[query-kth-smallest-trimmed-number.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/2343_query-kth-smallest-trimmed-number.swift)|
+|2380|[time-needed-to-rearrange-a-binary-string.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/2380_time-needed-to-rearrange-a-binary-string.swift)|
+|2384|[largest-palindromic-number.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/2384_largest-palindromic-number.swift)|
+|2399|[check-distances-between-same-letters.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/2399_check-distances-between-same-letters.swift)|
+|2409|[count-days-spent-together.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/2409_count-days-spent-together.swift)|
+|2423|[remove-letter-to-equalize-frequency.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/String/2423_remove-letter-to-equalize-frequency.swift)|
 
 ## Stack
 
@@ -1669,6 +1697,13 @@
 |2327|[number-of-people-aware-of-a-secret.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/2327_number-of-people-aware-of-a-secret.swift)|
 |2328|[number-of-increasing-paths-in-a-grid.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/2328_number-of-increasing-paths-in-a-grid.swift)|
 |2338|[count-the-number-of-ideal-arrays.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/2338_count-the-number-of-ideal-arrays.swift)|
+|2369|[check-if-there-is-a-valid-partition-for-the-array.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/2369_check-if-there-is-a-valid-partition-for-the-array.swift)|
+|2370|[longest-ideal-subsequence.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/2370_longest-ideal-subsequence.swift)|
+|2376|[count-special-integers.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/2376_count-special-integers.swift)|
+|2400|[number-of-ways-to-reach-a-position-after-exactly-k-steps.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/2400_number-of-ways-to-reach-a-position-after-exactly-k-steps.swift)|
+|2405|[optimal-partition-of-string.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/2405_optimal-partition-of-string.swift)|
+|2407|[longest-increasing-subsequence-ii.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/2407_longest-increasing-subsequence-ii.swift)|
+|2430|[maximum-deletions-on-a-string.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/DynamicProgramming/2430_maximum-deletions-on-a-string.swift)|
 
 ## Contest
 
@@ -1762,6 +1797,11 @@
 |2220|[minimum-bit-flips-to-convert-number.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/2220_minimum-bit-flips-to-convert-number.swift)|
 |2275|[largest-combination-with-bitwise-and-greater-than-zero.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/2275_largest-combination-with-bitwise-and-greater-than-zero.swift)|
 |2317|[maximum-xor-after-operations.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/2317_maximum-xor-after-operations.swift)|
+|2397|[maximum-rows-covered-by-columns.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/2397_maximum-rows-covered-by-columns.swift)|
+|2401|[longest-nice-subarray.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/2401_longest-nice-subarray.swift)|
+|2411|[smallest-subarrays-with-maximum-bitwise-or.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/2411_smallest-subarrays-with-maximum-bitwise-or.swift)|
+|2425|[bitwise-xor-of-all-pairings.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/2425_bitwise-xor-of-all-pairings.swift)|
+|2429|[minimize-xor.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/BitMapipulation/2429_minimize-xor.swift)|
 
 ## BreadFirstSearch
 
@@ -1909,6 +1949,7 @@
 |2099|[find-subsequence-of-length-k-with-the-largest-sum.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Sort/2099_find-subsequence-of-length-k-with-the-largest-sum.swift)|
 |2191|[sort-the-jumbled-numbers.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Sort/2191_sort-the-jumbled-numbers.swift)|
 |2335|[minimum-amount-of-time-to-fill-cups.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Sort/2335_minimum-amount-of-time-to-fill-cups.swift)|
+|2418|[sort-the-people.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/Sort/2418_sort-the-people.swift)|
 
 ## Offer
 
@@ -2017,6 +2058,8 @@
 |1456|[MaximumNumberOfVowelsInASubstringOfGivenLength.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/SlidingWindow/1456_MaximumNumberOfVowelsInASubstringOfGivenLength.swift)|
 |1695|[maximum-erasure-value.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/SlidingWindow/1695_maximum-erasure-value.swift)|
 |2302|[count-subarrays-with-score-less-than-k.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/SlidingWindow/2302_count-subarrays-with-score-less-than-k.swift)|
+|2414|[length-of-the-longest-alphabetical-continuous-substring.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/SlidingWindow/2414_length-of-the-longest-alphabetical-continuous-substring.swift)|
+|2419|[longest-subarray-with-maximum-bitwise-and.swift](https://github.com/LiuLongyang0305/LeetCode/tree/master/swift/SlidingWindow/2419_longest-subarray-with-maximum-bitwise-and.swift)|
 
 ## Queue
 
