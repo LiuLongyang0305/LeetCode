@@ -25,22 +25,13 @@ class Solution {
 
         var i = 0
         while i < N {
-            var j = i + 1
-            while j < N && nums[sortedIndices[j]] == nums[sortedIndices[i]] {
-                j += 1
+            let firseLargerIndex = binarySearch(sortedIndices[i])
+            let secondLargerIndex = largerIndices[ firseLargerIndex + 1]
+            if secondLargerIndex < N {
+                ans[sortedIndices[i]] = nums[secondLargerIndex]
             }
-
-            var k = i
-            while k < j {
-                let firseLargerIndex = binarySearch(sortedIndices[k])
-                let secondLargerIndex = largerIndices[ firseLargerIndex + 1]
-                if secondLargerIndex < N {
-                    ans[sortedIndices[k]] = nums[secondLargerIndex]
-                }
-                largerIndices.insert(sortedIndices[k], at: firseLargerIndex)
-                k += 1
-            }
-            i = j
+            largerIndices.insert(sortedIndices[i], at: firseLargerIndex)
+            i += 1
         }
         return ans
     }
