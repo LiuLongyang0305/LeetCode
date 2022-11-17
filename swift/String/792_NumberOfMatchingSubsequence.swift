@@ -1,48 +1,43 @@
 //https://leetcode.com/problems/number-of-matching-subsequences/
 class Solution {
-    var charToIndices = Array<Array<Int>>(repeating: Array<Int>(), count: 26)
-    let charToIndex: [Character:Int] = ["s": 18, "a": 0, "z": 25, "w": 22, "q": 16, "i": 8, "k": 10, "n": 13, "r": 17, "x": 23, "m": 12, "g": 6, "t": 19, "b": 1, "p": 15, "u": 20, "d": 3, "o": 14, "j": 9, "l": 11, "h": 7, "y": 24, "f": 5, "v": 21, "c": 2, "e": 4]
-    func numMatchingSubseq(_ S: String, _ words: [String]) -> Int {
-        let SToInt = S.map{ charToIndex[$0]!}
-        for i in 0..<S.count {
-            charToIndices[SToInt[i]].append(i)
+    private let charToIndex:[Character:Int] =  ["s": 18, "a": 0, "z": 25, "w": 22, "q": 16, "i": 8, "k": 10, "n": 13, "r": 17, "x": 23, "m": 12, "g": 6, "t": 19, "b": 1, "p": 15, "u": 20, "d": 3, "o": 14, "j": 9, "l": 11, "h": 7, "y": 24, "f": 5, "v": 21, "c": 2, "e": 4]
+    func numMatchingSubseq(_ s: String, _ words: [String]) -> Int {
+        var charToIndices = [[Int]](repeating: [-1], count: 26)
+        let N = s.count
+        var idx = 0
+        for ch in s {
+            charToIndices[charToIndex[ch]!].append(idx)
+            idx += 1
         }
-        var ans = 0
-        for word in words {
-            let wordToInt = word.map{charToIndex[$0]!}
-            if match(wordToInt) {
-                ans += 1
-            }
+        for i in 0..<26 {
+            charToIndices[i].append(N)
         }
-        return ans
-    }
-    private func match(_ word: [Int]) -> Bool {
-        var maxIndex = -1
-        var index = 0
-        while index < word.count {
+
+        func  binarySearch(_ ch: Character, target: Int) -> Int {
+            let idx = charToIndex[ch]!
             var left = 0
-            let indices = charToIndices[word[index]]
-            var right = indices.count
+            var right = charToIndices[idx].count - 1
             while left < right {
-                let mid = left + (right - left) >> 1
-                if indices[mid] > maxIndex {
+                let mid = (left + right) >> 1
+                if charToIndices[idx][mid] > target {
                     right = mid
-                } else if indices[mid] < maxIndex {
-                    left = mid + 1
                 } else {
                     left = mid + 1
-                    break
                 }
             }
-            if left == indices.count {
-                return false
-            }
-            if index == word.count - 1  {
-                return true
-            }
-            maxIndex = indices[left]
-            index += 1
+            return charToIndices[idx][left]
         }
-        return false
+
+        func match(_ word: String) -> Bool {
+            var lastIdx = -1
+            for ch in word {
+                let idx = binarySearch(ch, target: lastIdx)
+                guard idx < N else {return false}
+                lastIdx = idx
+            }
+            return true
+        }
+
+        return words.reduce(0) {$0 + (match($1) ? 1 : 0)}
     }
 }
