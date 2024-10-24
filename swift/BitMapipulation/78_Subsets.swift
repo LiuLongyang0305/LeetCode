@@ -32,3 +32,31 @@ class Solution {
         return ans
     }
 }
+
+
+class Solution {
+    func subsets(_ nums: [Int]) -> [[Int]] {
+        let N = nums.count
+        let T = (1 << N) - 1
+
+         func getNums(by mask: Int) -> [Int] {
+            var ans = [Int]()
+             for i in 0..<N {
+                 if (1 << i) & mask != 0 {
+                     ans.append(nums[i])
+                 }
+
+             }
+             return ans
+        }
+
+
+        var ans = [[Int]]()
+
+        for i in 0...T {
+            ans.append(getNums(by: i))
+        }
+
+        return ans
+    }
+}

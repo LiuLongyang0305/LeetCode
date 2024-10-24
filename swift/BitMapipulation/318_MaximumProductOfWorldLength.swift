@@ -76,3 +76,29 @@
         return ans
     }
  }
+//new solution
+ class Solution {
+    func maxProduct(_ words: [String]) -> Int {
+        let masks = words.map { getMask(of: $0)}
+        var ans = 0
+        let N = words.count
+        for i in 0..<(N - 1) {
+            for j in (i + 1)..<N{
+                if masks[i] & masks[j] == 0 {
+                    ans = max(ans, words[i].count * words[j].count)
+                }
+            }
+        }
+        return ans
+    }
+    private func getMask(of word: String) -> Int {
+        var ans = 0
+        word.forEach { ans = ans | (1 << $0.numVal)}
+        return ans
+    }
+}
+extension Character {
+    var numVal: Int {
+        return Int(self.asciiValue! - 97)
+    }
+}

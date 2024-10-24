@@ -60,3 +60,24 @@ class Q814_Solution {
         return containsNodesOne(root) ? root : nil
     }
 }
+
+
+//https://leetcode.cn/problems/binary-tree-pruning/
+class Solution {
+    func pruneTree(_ root: TreeNode?) -> TreeNode? {
+
+        func dfs(_ cur: TreeNode?) -> Int {
+            guard let c = cur else {return 0}
+            let left = dfs(c.left)
+            if left == 0 {
+                cur?.left = nil
+            }
+            let right = dfs(c.right)
+            if right == 0 {
+                cur?.right = nil
+            }
+            return left + right + c.val
+        }
+        return dfs(root) == 0 ? nil : root
+    }
+}
