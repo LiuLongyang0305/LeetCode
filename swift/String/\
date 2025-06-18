@@ -1,0 +1,16 @@
+//https://leetcode.com/problems/generate-tag-for-video-caption/
+class Solution {
+    func generateTag(_ caption: String) -> String {
+        let words = caption.split { $0 == " "}
+        guard !words.isEmpty else {return "#"}
+        // print(words.count)
+        var ans = "#\(words[0].lowercased())"
+        for word in words.dropFirst() {
+            ans += word.capitalized
+        }
+        if ans.count > 100 {
+            ans.removeLast(ans.count - 100)
+        }
+        return ans
+    }
+}
