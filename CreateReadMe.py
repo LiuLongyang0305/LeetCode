@@ -21,6 +21,8 @@ with open(file_path, 'w') as read_me:
         read_me.write('|:--|:----|\n')
         dic = {0: ' '}
         for file_name in file_names:
+            if not file_name.endswith('.swift'):
+                continue
             parts = file_name.split('_')
             # name = parts[1]
             name = file_name
