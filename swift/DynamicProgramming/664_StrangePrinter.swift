@@ -31,4 +31,34 @@
     }
  }
 
- 
+
+
+class Solution {
+    func strangePrinter(_ s: String) -> Int {
+        let chars = [Character](s)
+        let M = s.count
+
+        var memo = [[Int]](repeating: [Int](repeating: 200, count: M + 2), count: M + 2)
+
+        func dfs(_ i: Int, _ j: Int) -> Int {
+            if i == j {return 1}
+            if j - i == 1 {
+                return chars[i] == chars[j] ? 1 : 2
+            }
+            if 200 != memo[i][j] {
+                return memo[i][j]
+            }
+            var sb = j - i + 1
+            for k in stride(from: i, to: j, by: 1) {
+                sb = min(sb,dfs(i, k) + dfs(k + 1, j))
+            }
+            if  i < j && chars[i] == chars[j] {
+                sb = min(sb, dfs(i, j - 1))
+            }
+            memo[i][j] = sb
+            return sb
+        }
+
+        return dfs(0, M - 1)
+    }
+} 

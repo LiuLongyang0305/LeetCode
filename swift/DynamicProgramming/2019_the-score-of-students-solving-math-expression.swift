@@ -80,3 +80,83 @@ class Solution {
     }
 }
 
+
+
+
+//https://leetcode.cn/problems/the-score-of-students-solving-math-expression/
+class Solution {
+    func scoreOfStudents(_ s: String, _ answers: [Int]) -> Int {
+        let chars = [Character](s)
+        let nums = chars.map {Int($0.asciiValue!) - 48}
+        let M = chars.count
+        let standardAnswer = cal(chars)
+        var memo = [[Set<Int>]](repeating: [Set<Int>](repeating: [], count: M), count: M)
+        var visited = [[Bool]](repeating: [Bool](repeating: false, count: M), count: M)
+        func dfs(_ i: Int, _ j: Int){
+            if i == j {
+                memo[i][j] = [nums[i]]
+                return
+            }
+
+            if visited[i][j] {return}
+
+
+            var sb = Set<Int>()
+            for k in i...j {
+                if !chars[k].isNumber {
+                    dfs(i, k - 1)
+                    dfs(k + 1, j)
+
+                    for l in memo[i][k - 1] {
+                        for r in memo[k + 1][j] {
+                            let curAns = chars[k] == "*" ? (l * r) : (l + r)
+                            if curAns <= 1000 {
+                                sb.insert(curAns)
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            memo[i][j] = sb
+            visited[i][j] = true
+
+        }
+        dfs(0, M - 1)
+        let possibleWrongAnswers = memo[0][M - 1]
+        var sb = 0
+        for answer in answers {
+            if answer == standardAnswer {
+                sb += 5
+            } else {
+                if possibleWrongAnswers.contains(answer) {
+                    sb += 2
+                }
+            }
+        }
+        return sb
+    }
+
+
+
+
+    func cal(_ expressionChars: [Character]) -> Int {
+        var nums = [Int]()
+        var symbols = [Character]()
+        for ch in expressionChars {
+            if ch.isNumber {
+                nums.append(Int(ch.asciiValue! - 48))
+            } else {
+                symbols.append(ch)
+            }
+        }
+
+        while let firstIdx = symbols.firstIndex(of: "*") {
+            nums[firstIdx] *= nums[firstIdx + 1]
+            nums.remove(at: firstIdx + 1)
+            symbols.remove(at: firstIdx)
+        }
+        return nums.reduce(0) {$0 + $1}
+    }
+}

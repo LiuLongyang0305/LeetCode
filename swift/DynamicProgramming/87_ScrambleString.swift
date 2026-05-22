@@ -38,3 +38,27 @@
         return false
     }
  }
+
+
+class Solution {
+    func isScramble(_ s1: String, _ s2: String) -> Bool {
+        let chars1 = [Character](s1)
+        let chars2 = [Character](s2)
+        let M = chars1.count
+        var memo = [[[Bool?]]](repeating: [[Bool?]](repeating: [Bool?](repeating: nil, count: M + 5), count: M + 5), count: M + 5)
+        func dfs(_ i: Int, _ j: Int, _ len: Int) -> Bool {
+            guard len > 1 else {
+                return chars1[i] == chars2[j]
+            }
+
+            if let sb = memo[i][j][len] {return sb}
+            var sb =  false
+            for curLen in 1..<len {
+                sb = sb || (dfs(i,j , curLen) && dfs(i + curLen, j + curLen, len - curLen)) || (dfs(i, j + len - curLen, curLen) && dfs(i + curLen,j,len - curLen))
+            }
+            memo[i][j][len] = sb
+            return sb
+        }
+        return dfs(0, 0, M)
+    }
+}
