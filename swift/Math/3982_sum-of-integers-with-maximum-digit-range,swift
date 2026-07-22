@@ -1,0 +1,33 @@
+    //https://leetcode.cn/problems/sum-of-integers-with-maximum-digit-range/
+    class Solution {
+        func maxDigitRange(_ nums: [Int]) -> Int {
+            var mxRange = -1
+            var sum = 0
+            for num in nums {
+                let range = getDigitRange(for: num)
+                if range < mxRange {
+                    continue
+                }
+                if range == mxRange {
+                    sum += num
+                } else {
+                    mxRange = range
+                    sum = num
+                }
+
+            }
+            return sum
+        }
+        private func getDigitRange(for num: Int) -> Int {
+            var mxDigit = -1
+            var minDigit = 10
+            var t = num
+            while t > 0 {
+                let digit = t % 10
+                mxDigit = max(mxDigit,digit)
+                minDigit = min(minDigit,digit)
+                t /= 10
+            }
+            return mxDigit - minDigit
+        }
+    }
